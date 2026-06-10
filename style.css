@@ -1463,3 +1463,222 @@ footer ul a:hover { color: var(--white); }
   .reveal { opacity: 1; transform: none; transition: none; }
   #hero-canvas { display: none; }
 }
+
+/* ── AEO ADDON REDESIGN ── */
+.aeo-addon-box {
+  background: linear-gradient(135deg, rgba(0,229,255,.05) 0%, rgba(0,0,0,0) 60%);
+  border-top: 1px solid rgba(0,229,255,.2);
+  position: relative;
+  overflow: hidden;
+}
+.aeo-addon-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,229,255,.6), transparent);
+}
+.aeo-addon-box::after {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(0,229,255,.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.aeo-addon-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 40px 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-family: monospace;
+}
+.aeo-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 0 rgba(0,229,255,.6);
+  animation: aeo-pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes aeo-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(0,229,255,.6); }
+  70%  { box-shadow: 0 0 0 10px rgba(0,229,255,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,229,255,0); }
+}
+.aeo-addon-inner {
+  display: flex;
+  gap: 32px;
+  padding: 20px 40px 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+.aeo-addon-left {
+  flex: 1;
+  min-width: 260px;
+}
+.aeo-addon-h {
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 800;
+  color: var(--pure);
+  letter-spacing: -.03em;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+.aeo-addon-h em {
+  font-style: normal;
+  color: var(--accent);
+}
+.aeo-addon-sub {
+  font-size: 14px;
+  color: var(--light);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  max-width: 460px;
+}
+.aeo-ai-logos {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.aeo-ai-chip {
+  background: rgba(0,229,255,.08);
+  border: 1px solid rgba(0,229,255,.2);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: .04em;
+}
+.aeo-addon-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.aeo-addon-list li {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--light);
+  align-items: flex-start;
+}
+.aeo-addon-list li span {
+  color: var(--accent);
+  font-size: 14px;
+  flex-shrink: 0;
+  text-shadow: 0 0 6px rgba(0,229,255,.4);
+  margin-top: 1px;
+}
+.aeo-addon-honest {
+  font-size: 12px;
+  color: var(--mid);
+  font-family: monospace;
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+/* Right price card */
+.aeo-addon-right {
+  flex-shrink: 0;
+  min-width: 200px;
+}
+.aeo-price-card {
+  background: var(--dark);
+  border: 1px solid rgba(0,229,255,.25);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 0 32px rgba(0,229,255,.1);
+  position: relative;
+  overflow: hidden;
+}
+.aeo-price-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,229,255,.6), transparent);
+}
+.aeo-addon-price-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 10px;
+  font-family: monospace;
+}
+.aeo-addon-price {
+  font-size: 52px;
+  font-weight: 800;
+  color: var(--pure);
+  letter-spacing: -.04em;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+.aeo-addon-price span {
+  font-size: 18px;
+  color: var(--light);
+  font-weight: 400;
+}
+.aeo-addon-gst {
+  font-size: 12px;
+  color: var(--mid);
+  margin-bottom: 20px;
+}
+.aeo-addon-btn {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+  text-align: center;
+}
+.aeo-addon-cancel {
+  font-size: 11px;
+  color: var(--mid);
+  margin-top: 10px;
+}
+.aeo-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 20px 0;
+}
+.aeo-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.aeo-stat:last-child { margin-bottom: 0; }
+.aeo-stat-num {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -.04em;
+  line-height: 1;
+  text-shadow: 0 0 16px rgba(0,229,255,.4);
+}
+.aeo-stat-label {
+  font-size: 11px;
+  color: var(--mid);
+  text-align: center;
+  line-height: 1.4;
+  margin-top: 3px;
+}
+
+@media (max-width: 768px) {
+  .aeo-addon-eyebrow { padding: 20px 24px 0; }
+  .aeo-addon-inner { padding: 16px 24px 28px; flex-direction: column; }
+  .aeo-addon-right { width: 100%; }
+}
