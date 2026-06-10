@@ -18,7 +18,7 @@
 
 <nav>
   <div class="nav-inner">
-    <a href="index.html"><img src="logo.png" alt="Siteblast" class="logo-img"></a>
+    <a href="index.html" class="logo-lockup"><img src="sblogo.png" alt="" class="logo-bolt"><span class="logo-word">Site<em>blast</em></span></a>
     <div class="nav-links" id="nav-links">
       <a href="#pitch">The pitch</a>
       <a href="#how">How it works</a>
@@ -34,6 +34,10 @@
 
 <section class="hero">
   <div class="container">
+    <div class="hero-brand-row">
+      <img src="sblogo.png" alt="" class="hero-bolt">
+      <span class="hero-brand-name">Siteblast</span>
+    </div>
     <div class="hero-label">Live in 48 hours</div>
     <h1>Websites that <em>win you work.</em></h1>
     <p>We build fast, professional websites for Australian small businesses — then manage everything so you never have to think about it again.</p>
@@ -62,42 +66,28 @@
 
 <hr class="divider">
 
+<!-- ── PITCH PART 1: Why it matters ── -->
 <section class="section" id="pitch">
   <div class="container">
-    <div class="pitch-grid">
-      <div class="pitch-text">
-        <span class="eyebrow">The pitch</span>
-        <h2>Your old site is costing you jobs.</h2>
-        <p>Most tradie websites are slow, look terrible on mobile, and haven't been touched in years. Customers Google you, land on something embarrassing, and call your competitor instead.</p>
-        <p>Siteblast builds you a fast, professional site that actually converts — then handles all the technical stuff forever so you can focus on the work.</p>
-        <p style="color: var(--white); font-weight: 600;">Free to build. Just pay the monthly.</p>
-        <a href="#contact" class="btn" style="margin-top: 24px;">Get my free demo</a>
+    <div class="pitch-why">
+      <div class="pitch-why-label"><span class="step-label">01 / Why it matters</span></div>
+      <h2 class="pitch-big-h">Most websites are <span class="pitch-dim">silently bleeding new customers every single day.</span></h2>
+    </div>
+    <div class="pitch-cards">
+      <div class="pitch-card">
+        <div class="pitch-card-num">// 01</div>
+        <h3>Trust is decided in 4 seconds.</h3>
+        <p>Before someone reads a word, they've already decided whether your business looks legit. A polished, professional-looking site says "this is a real operator." A clunky one says "I'll keep scrolling." That four-second read is costing you customers you'll never even know existed.</p>
       </div>
-      <div class="pitch-visual">
-        <div class="mock-browser">
-          <div class="mock-bar">
-            <div class="mock-dot"></div>
-            <div class="mock-dot"></div>
-            <div class="mock-dot"></div>
-            <div class="mock-url"></div>
-          </div>
-          <div class="mock-content">
-            <div class="mock-hero-block">
-              <div class="mock-h"></div>
-              <div class="mock-p"></div>
-              <div class="mock-p"></div>
-              <div class="mock-btn-block">
-                <div class="mock-btn"></div>
-                <div class="mock-btn-ghost"></div>
-              </div>
-            </div>
-            <div class="mock-cards">
-              <div class="mock-card"><div class="mock-icon"></div><div class="mock-card-h"></div><div class="mock-card-p"></div></div>
-              <div class="mock-card"><div class="mock-icon"></div><div class="mock-card-h"></div><div class="mock-card-p"></div></div>
-            </div>
-          </div>
-        </div>
-        <p style="font-size:12px;color:var(--mid);text-align:center;margin-top:16px">Your new site. Live in 48 hours.</p>
+      <div class="pitch-card">
+        <div class="pitch-card-num">// 02</div>
+        <h3>9 in 10 visitors are on a phone.</h3>
+        <p>If your site is hard to read on a phone — text too small, buttons too fiddly, photos cut off — they're already on the next result. We build mobile-first, so the experience is sharp on the device almost all of your visitors are actually using.</p>
+      </div>
+      <div class="pitch-card">
+        <div class="pitch-card-num">// 03</div>
+        <h3>The bar has moved.</h3>
+        <p>What looked fine back in 2022 looks tired today. Customers now compare you against the slickest sites they've used all week — banks, retailers, big brands. A site that looks five years old quietly tells them your business probably is too. A modern site closes that gap.</p>
       </div>
     </div>
   </div>
@@ -105,6 +95,115 @@
 
 <hr class="divider">
 
+<!-- ── PITCH PART 2: The revenue calculator ── -->
+<section class="section" id="calculator">
+  <div class="container">
+    <div class="calc-section">
+      <div class="calc-left">
+        <div class="pitch-why-label"><span class="step-label">02 / The pitch</span></div>
+        <h2 class="pitch-big-h">What if your site won you one extra customer a week? <span class="pitch-dim">Just one.</span></h2>
+        <div class="calc-copy">
+          <h3>The maths is brutally simple. <span class="pitch-dim">And in your favour.</span></h3>
+          <p>Most small business websites aren't broken — they're just <strong>not professional</strong>. Outdated layouts, mismatched fonts, photos pulled from a phone in 2017, designs that haven't aged well. The contact form works. The phone number is there. None of that matters if a new customer's first impression is "this looks a bit dodgy."</p>
+          <p>A polished, professional-looking website gives a first-time visitor the <strong>confidence to actually enquire</strong>. That single shift — looking like a serious operator instead of a part-timer — is what turns browsers into paying customers.</p>
+          <blockquote class="calc-quote">"Can I afford to keep losing new customers because of an outdated looking website?"</blockquote>
+        </div>
+      </div>
+      <div class="calc-right">
+        <div class="calc-card">
+          <div class="calc-card-label">// REVENUE CALCULATOR</div>
+          <h4>What's one extra customer a week worth to you?</h4>
+          <p class="calc-card-sub">Plug in your numbers — this isn't pricing for a website, it's the upside of having one that actually wins customers.</p>
+
+          <div class="calc-field">
+            <label>AVERAGE CUSTOMER VALUE</label>
+            <div class="calc-input-wrap">
+              <span class="calc-dollar">$</span>
+              <input type="number" id="customer-value" value="250" min="50" max="10000" step="50">
+            </div>
+          </div>
+
+          <div class="calc-field">
+            <label>EXTRA CUSTOMERS PER WEEK <span id="slider-val">1</span></label>
+            <input type="range" id="customers-slider" min="1" max="10" value="1" class="calc-slider">
+          </div>
+
+          <div class="calc-result">
+            <div class="calc-result-row">
+              <span>Extra revenue / month</span>
+              <span id="monthly-result">$1,083</span>
+            </div>
+            <div class="calc-divider"></div>
+            <div class="calc-result-row calc-result-big">
+              <span>EXTRA REVENUE / YEAR</span>
+              <span id="yearly-result">$13,000</span>
+            </div>
+            <p class="calc-fine">// Just one extra customer a month. Most owners aim higher.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── BEFORE / AFTER ── -->
+<section class="section" id="before-after">
+  <div class="container">
+    <span class="eyebrow">Real refresh</span>
+    <h2 style="font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-.04em;color:var(--pure);max-width:700px;margin-bottom:16px">Same business. <span style="color:var(--light);font-weight:400">Same content.</span> A site that finally looks the part.</h2>
+    <p style="color:var(--light);font-size:15px;margin-bottom:56px;max-width:560px">We take what you have and rebuild it to look modern, professional and mobile-first. Same pages, same content, same URLs. No 40-page brief, no rewrite from scratch.</p>
+
+    <!-- Desktop before/after -->
+    <div class="ba-toggle-row">
+      <button class="ba-toggle-btn active" id="btn-desktop" onclick="showDesktop()">Desktop</button>
+      <button class="ba-toggle-btn" id="btn-mobile" onclick="showMobile()">Mobile</button>
+    </div>
+
+    <div class="ba-grid" id="ba-desktop">
+      <div class="ba-panel">
+        <div class="ba-badge ba-before">● BEFORE</div>
+        <div class="ba-img-wrap">
+          <img src="before-desktop.png" alt="Before — old website desktop view" loading="lazy">
+        </div>
+        <p class="ba-caption">Busy banner, competing buttons, a booking form fighting for attention. <strong>Working — but it doesn't look modern.</strong></p>
+      </div>
+      <div class="ba-arrow">→</div>
+      <div class="ba-panel">
+        <div class="ba-badge ba-after">● AFTER</div>
+        <div class="ba-img-wrap ba-img-after">
+          <img src="after-desktop.png" alt="After — new website desktop view" loading="lazy">
+        </div>
+        <p class="ba-caption">Editorial hero, one clear headline, a single obvious next step. Same business, same phone number — <strong style="color:var(--accent)">it just looks like a business people trust.</strong></p>
+      </div>
+    </div>
+
+    <div class="ba-grid" id="ba-mobile" style="display:none">
+      <div class="ba-panel">
+        <div class="ba-badge ba-before">● BEFORE</div>
+        <div class="ba-img-wrap ba-mobile-wrap">
+          <img src="before-mobile.png" alt="Before — old website mobile view" loading="lazy">
+        </div>
+        <p class="ba-caption">Text overflowing, logo and nav broken, content cut off on the edges. <strong>Most visitors are on mobile — this is what they see.</strong></p>
+      </div>
+      <div class="ba-arrow">→</div>
+      <div class="ba-panel">
+        <div class="ba-badge ba-after">● AFTER</div>
+        <div class="ba-img-wrap ba-mobile-wrap">
+          <img src="after-mobile.png" alt="After — new website mobile view" loading="lazy">
+        </div>
+        <p class="ba-caption">Full-bleed hero, bold headline, clear CTAs. Fast, readable, thumb-friendly. <strong style="color:var(--accent)">Sharp on the device your customers actually use.</strong></p>
+      </div>
+    </div>
+
+    <p style="text-align:center;font-size:13px;color:var(--mid);margin-top:32px">// Real refresh, built in 48 hours. Same pages, same content, same URLs.</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── HOW IT WORKS ── -->
 <section class="section" id="how">
   <div class="container">
     <span class="eyebrow">How it works</span>
@@ -136,6 +235,7 @@
 
 <hr class="divider">
 
+<!-- ── WHAT'S INCLUDED ── -->
 <section class="section" id="hosting">
   <div class="container">
     <span class="eyebrow">What's included</span>
@@ -220,6 +320,7 @@
 
 <hr class="divider">
 
+<!-- ── FAQ ── -->
 <section class="section" id="faq">
   <div class="container-sm">
     <span class="eyebrow">FAQ</span>
@@ -237,6 +338,23 @@
 
 <hr class="divider">
 
+<!-- ── BRAND STRIP ── -->
+<section class="brand-strip">
+  <div class="container">
+    <div class="brand-strip-inner">
+      <img src="sblogo.png" alt="" class="brand-strip-bolt">
+      <div class="brand-strip-text">
+        <span class="brand-strip-name">Siteblast</span>
+        <span class="brand-strip-tagline">Websites That Win You Work</span>
+      </div>
+      <a href="#contact" class="btn brand-strip-btn">Get my free demo →</a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── CONTACT ── -->
 <section class="section" id="contact">
   <div class="container">
     <span class="eyebrow">Get started</span>
@@ -287,7 +405,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html"><img src="logo.png" alt="Siteblast" class="logo-img"></a>
+        <a href="index.html" class="logo-lockup"><img src="sblogo.png" alt="" class="logo-bolt"><span class="logo-word">Site<em>blast</em></span></a>
         <p>Websites and growth tooling for Australian small businesses. Built to win work.</p>
       </div>
       <div>
@@ -317,9 +435,12 @@
 </footer>
 
 <script>
+  // Nav toggle
   document.getElementById('nav-toggle').addEventListener('click', function() {
     document.getElementById('nav-links').classList.toggle('open');
   });
+
+  // FAQ accordion
   document.querySelectorAll('.faq-q').forEach(btn => {
     btn.addEventListener('click', function() {
       const item = this.closest('.faq-item');
@@ -328,6 +449,35 @@
       if (!isOpen) item.classList.add('open');
     });
   });
+
+  // Revenue Calculator
+  function calcRevenue() {
+    const val = parseFloat(document.getElementById('customer-value').value) || 0;
+    const count = parseInt(document.getElementById('customers-slider').value) || 1;
+    document.getElementById('slider-val').textContent = count;
+    const weeksPerMonth = 52 / 12;
+    const monthly = val * count * weeksPerMonth;
+    const yearly = val * count * 52;
+    document.getElementById('monthly-result').textContent = '$' + Math.round(monthly).toLocaleString();
+    document.getElementById('yearly-result').textContent = '$' + Math.round(yearly).toLocaleString();
+  }
+  document.getElementById('customer-value').addEventListener('input', calcRevenue);
+  document.getElementById('customers-slider').addEventListener('input', calcRevenue);
+  calcRevenue();
+
+  // Before/After toggle
+  function showDesktop() {
+    document.getElementById('ba-desktop').style.display = 'grid';
+    document.getElementById('ba-mobile').style.display = 'none';
+    document.getElementById('btn-desktop').classList.add('active');
+    document.getElementById('btn-mobile').classList.remove('active');
+  }
+  function showMobile() {
+    document.getElementById('ba-desktop').style.display = 'none';
+    document.getElementById('ba-mobile').style.display = 'grid';
+    document.getElementById('btn-mobile').classList.add('active');
+    document.getElementById('btn-desktop').classList.remove('active');
+  }
 </script>
 </body>
 </html>
