@@ -2197,138 +2197,6 @@ footer ul a:hover { color: var(--white); }
 }
 
 
-/* ── PREMIUM MOCK SITE PREVIEWS ── */
-.mp2-wrap {
-  margin-bottom: 14px;
-}
-.mp2-browser {
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,.1);
-  box-shadow: 0 8px 32px rgba(0,0,0,.5);
-}
-.mp2-bar {
-  background: #1e1e1e;
-  padding: 7px 12px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border-bottom: 1px solid rgba(255,255,255,.06);
-}
-.mp2-dots {
-  display: flex;
-  gap: 5px;
-  flex-shrink: 0;
-}
-.mp2-dots span {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-}
-.mp2-dots span:nth-child(1) { background: #ff5f57; }
-.mp2-dots span:nth-child(2) { background: #febc2e; }
-.mp2-dots span:nth-child(3) { background: #28c840; }
-.mp2-url {
-  background: rgba(255,255,255,.07);
-  border-radius: 4px;
-  padding: 3px 10px;
-  font-size: 9px;
-  color: rgba(255,255,255,.3);
-  flex: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-family: monospace;
-}
-.mp2-site {
-  background: #111;
-}
-.mp2-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 12px;
-  background: rgba(10,10,10,.95);
-  border-bottom: 1px solid rgba(255,255,255,.06);
-  gap: 8px;
-}
-.mp2-brand {
-  font-size: 10px;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: -.02em;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-.mp2-navlinks {
-  display: flex;
-  gap: 10px;
-  flex: 1;
-  justify-content: center;
-}
-.mp2-navlinks span {
-  font-size: 8px;
-  color: rgba(255,255,255,.4);
-}
-.mp2-cta-nav {
-  font-size: 8px;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 20px;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-.mp2-hero {
-  background-size: cover;
-  background-position: center;
-  padding: 20px 14px 18px;
-  min-height: 120px;
-  display: flex;
-  align-items: flex-end;
-}
-.mp2-hero-inner {
-  width: 100%;
-}
-.mp2-eyebrow {
-  font-size: 7px;
-  font-weight: 700;
-  letter-spacing: .1em;
-  margin-bottom: 4px;
-  font-family: monospace;
-  opacity: .8;
-}
-.mp2-h1 {
-  font-size: 13px;
-  font-weight: 800;
-  color: #fff;
-  line-height: 1.2;
-  letter-spacing: -.02em;
-  margin-bottom: 4px;
-}
-.mp2-hsub {
-  font-size: 8px;
-  color: rgba(255,255,255,.5);
-  margin-bottom: 10px;
-  line-height: 1.4;
-}
-.mp2-btns {
-  display: flex;
-  gap: 6px;
-  align-items: center;
-}
-.mp2-btn-main {
-  font-size: 8px;
-  font-weight: 700;
-  padding: 5px 12px;
-  border-radius: 20px;
-  white-space: nowrap;
-}
-.mp2-btn-ghost {
-  font-size: 8px;
-  color: rgba(255,255,255,.6);
-  padding: 4px 10px;
-  border-radius: 20px;
-  border: 1px solid rgba(255,255,255,.2);
-}
 
 /* Featured card wider */
 .review-featured.marquee-card {
@@ -2337,3 +2205,70 @@ footer ul a:hover { color: var(--white); }
 .marquee-card {
   width: 300px;
 }
+
+/* ── MOCK SITE PREVIEWS ── */
+.mp2-wrap { margin-bottom: 14px; }
+.mp2-browser {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.1);
+  box-shadow: 0 8px 32px rgba(0,0,0,.5);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+.mp2-bar {
+  background: #1e1e1e;
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.mp2-dots { display: flex; gap: 5px; flex-shrink: 0; }
+.mp2-dots span { width: 8px; height: 8px; border-radius: 50%; }
+.mp2-dots span:nth-child(1) { background: #ff5f57; }
+.mp2-dots span:nth-child(2) { background: #febc2e; }
+.mp2-dots span:nth-child(3) { background: #28c840; }
+.mp2-url {
+  background: rgba(255,255,255,.07);
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 9px;
+  color: rgba(255,255,255,.3);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: monospace;
+}
+.mp2-site { overflow: hidden; }
+.mp2-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 12px;
+  gap: 8px;
+}
+.mp2-brand {
+  font-size: 10px;
+  font-weight: 800;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.mp2-navlinks {
+  display: flex;
+  gap: 9px;
+  flex: 1;
+  justify-content: center;
+}
+.mp2-navlinks span { font-size: 8px; }
+.mp2-cta-nav {
+  font-size: 8px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+/* Card widths */
+.review-featured.marquee-card { width: 380px; }
+.marquee-card { width: 310px; }
