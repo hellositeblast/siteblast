@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pricing — Siteblast</title>
-  <meta name="description" content="Simple, fixed pricing. Free website build — you only pay for hosting and support. Live in 48 hours.">
+  <meta name="description" content="Simple, fixed pricing. Free website build — you only pay for hosting. Live in 48 hours. No lock-in contract.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.siteblast.com.au/pricing.html">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -20,7 +20,7 @@
       <a href="index.html#how">How it works</a>
       <a href="pricing.html">Pricing</a>
       <a href="index.html#contact">Contact</a>
-      <a href="index.html#contact" class="btn nav-cta">Get a free demo</a>
+      <a href="index.html#contact" class="btn btn-dark nav-cta">Get a free demo</a>
     </div>
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </div>
@@ -28,106 +28,101 @@
 
 <section class="page-head">
   <div class="container-sm">
-    <span class="eyebrow reveal">Pricing · simple, fixed, no surprises</span>
-    <h1 class="reveal reveal-delay-1">One website. One simple price.</h1>
-    <p class="reveal reveal-delay-2">No tiers. No haggling. No "request a quote." A custom-built professional website at a price you can sign off on in your lunch break.</p>
+    <p class="section-tag reveal">Pricing · simple, fixed, no surprises</p>
+    <h1 class="reveal d1">One website. One simple price.</h1>
+    <p class="reveal d2">No tiers. No haggling. No "request a quote." A custom-built professional website at a price you can sign off on in your lunch break.</p>
   </div>
 </section>
 
-<section class="section">
+<section class="pricing-section">
   <div class="container-sm">
 
-    <!-- FREE BUILD BANNER -->
-    <div class="reveal" style="background:var(--wash);border:1px solid var(--rule);border-radius:var(--radius-lg);padding:28px 36px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;margin-bottom:56px">
-      <div>
-        <p style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">The whole website</p>
-        <h2 style="font-size:22px;font-weight:800;letter-spacing:-.03em;margin-bottom:6px">Custom-built, mobile-first, live in 48 hours.</h2>
-        <p style="font-size:14px;color:var(--muted)">Professional site built to win work — completely free. Just pay hosting and support.</p>
+    <!-- FREE BANNER -->
+    <div class="free-banner reveal">
+      <div class="free-banner-text">
+        <p>The whole website</p>
+        <h2>A modern, professional website. Built to win more customers.</h2>
+        <p>Custom-designed, mobile-first, built to win work — completely free of charge. Just pay hosting and support.</p>
       </div>
-      <div style="text-align:right;flex-shrink:0">
-        <p style="font-size:13px;color:var(--muted);text-decoration:line-through">$3,300</p>
-        <p style="font-size:52px;font-weight:800;letter-spacing:-.05em;line-height:1;color:var(--accent)">FREE</p>
-        <p style="font-size:12px;color:var(--muted)">One-off · inc. GST</p>
-      </div>
-    </div>
-
-    <!-- SUPPORT PLAN HEADER -->
-    <div class="reveal" style="margin-bottom:24px">
-      <span class="eyebrow">Support plan</span>
-      <h2 style="font-size:clamp(22px,3vw,34px);font-weight:800;letter-spacing:-.04em;margin-bottom:8px">Hosting, backups, uptime. Sorted.</h2>
-      <p style="color:var(--muted);font-size:15px;max-width:480px">Everything your site needs to stay fast, safe and up — plus real support when you need it.</p>
-    </div>
-
-    <!-- TOGGLE RIGHT ABOVE CARDS -->
-    <div class="pricing-toggle-wrap reveal reveal-delay-1">
-      <div class="pricing-toggle">
-        <button class="pt-btn active" id="btn-monthly" onclick="setMonthly()">Monthly</button>
-        <button class="pt-btn" id="btn-annual" onclick="setAnnual()">Annual <span class="pt-badge">Save 30%</span></button>
+      <div class="free-banner-price">
+        <p class="was">$3,300</p>
+        <p class="now">FREE</p>
+        <p class="gst">One-off · inc. GST</p>
       </div>
     </div>
 
-    <!-- PLAN CARDS -->
-    <div class="pricing-grid reveal reveal-delay-2">
+    <!-- PLAN HEADER + TOGGLE + CARDS all together -->
+    <div class="plan-header reveal">
+      <p class="section-tag" style="margin-bottom:12px">Support plan</p>
+      <h2>Hosting, backups, uptime, and the important stuff. Sorted.</h2>
+      <p>Everything your site needs to stay fast, safe and up — plus a real person on support.</p>
+    </div>
 
-      <!-- HOSTING -->
-      <div class="plan-card featured">
-        <p class="plan-label">Hosting & support</p>
+    <!-- TOGGLE immediately below header, above cards -->
+    <div class="toggle-wrap reveal d1">
+      <div class="toggle">
+        <button class="toggle-btn on" id="btn-mo" onclick="setMonthly()">Monthly</button>
+        <button class="toggle-btn" id="btn-an" onclick="setAnnual()">Annual <span class="save-badge">Save 30%</span></button>
+      </div>
+    </div>
+
+    <!-- PLAN CARDS immediately below toggle -->
+    <div class="plans-grid reveal d2">
+      <div class="plan dark">
+        <p class="plan-name">Hosting & support</p>
         <p class="plan-price" id="hosting-price">$220<span class="plan-period">/mo</span></p>
-        <p class="plan-muted" id="hosting-sub">Billed monthly · cancel anytime</p>
-        <hr class="plan-divider">
+        <p class="plan-billing" id="hosting-billing">Billed monthly · cancel anytime</p>
+        <hr class="plan-rule">
         <ul class="plan-features">
-          <li><span class="check">✓</span> Premium high-speed hosting</li>
-          <li><span class="check">✓</span> Global CDN</li>
-          <li><span class="check">✓</span> SSL & active security monitoring</li>
-          <li><span class="check">✓</span> Daily automatic backups — 30 days</li>
-          <li><span class="check">✓</span> 99.9% uptime monitoring</li>
-          <li><span class="check">✓</span> One website change per month</li>
-          <li><span class="check">✓</span> Real Australian support</li>
-          <li><span class="check">✓</span> Plain-English monthly reporting</li>
-          <li><span class="check">✓</span> No lock-in — cancel anytime</li>
+          <li><span class="chk">✓</span> Premium high-speed hosting</li>
+          <li><span class="chk">✓</span> Global CDN</li>
+          <li><span class="chk">✓</span> SSL & active security monitoring</li>
+          <li><span class="chk">✓</span> Daily automatic backups — 30 days</li>
+          <li><span class="chk">✓</span> 99.9% uptime monitoring</li>
+          <li><span class="chk">✓</span> One website change per month</li>
+          <li><span class="chk">✓</span> Real Australian support</li>
+          <li><span class="chk">✓</span> Plain-English monthly reporting</li>
+          <li><span class="chk">✓</span> No lock-in — cancel anytime</li>
         </ul>
-        <a href="https://buy.stripe.com/00w6oGgJt2Xac6ubfZ1wY01" id="hosting-btn" class="btn plan-btn plan-btn-light" target="_blank">Get started →</a>
+        <a href="https://buy.stripe.com/00w6oGgJt2Xac6ubfZ1wY01" id="hosting-btn" class="btn btn-full" style="background:var(--white);color:var(--ink);padding:14px" target="_blank">Get started →</a>
       </div>
-
-      <!-- WHAT YOU GET -->
-      <div class="plan-card">
-        <p class="plan-label">What you're getting</p>
-        <p style="font-size:28px;font-weight:800;letter-spacing:-.04em;margin:12px 0 4px;line-height:1">A site that<br>wins work.</p>
-        <p class="plan-muted" style="margin-bottom:20px">Built for Australian tradies and local service businesses.</p>
-        <hr class="plan-divider">
+      <div class="plan">
+        <p class="plan-name">What you're getting</p>
+        <p style="font-size:30px;font-weight:800;letter-spacing:-.04em;line-height:1.1;color:var(--ink);margin:12px 0 4px">A site that<br>wins work.</p>
+        <p class="plan-billing">Built for Australian tradies and local service businesses.</p>
+        <hr class="plan-rule">
         <ul class="plan-features">
-          <li><span class="check">✓</span> Custom-designed for your trade</li>
-          <li><span class="check">✓</span> Mobile-first, fast loading</li>
-          <li><span class="check">✓</span> Click-to-call & contact form</li>
-          <li><span class="check">✓</span> Google-ready SEO foundations</li>
-          <li><span class="check">✓</span> Local suburb targeting</li>
-          <li><span class="check">✓</span> Live in 48 hours</li>
-          <li><span class="check">✓</span> Free demo first, no commitment</li>
+          <li><span class="chk">✓</span> Custom-designed for your trade</li>
+          <li><span class="chk">✓</span> Mobile-first, fast loading</li>
+          <li><span class="chk">✓</span> Click-to-call & contact form</li>
+          <li><span class="chk">✓</span> Google-ready SEO foundations</li>
+          <li><span class="chk">✓</span> Local suburb targeting</li>
+          <li><span class="chk">✓</span> Live in 48 hours</li>
+          <li><span class="chk">✓</span> Free demo first, no commitment</li>
         </ul>
-        <a href="index.html#contact" class="btn btn-outline plan-btn">Get my free demo →</a>
+        <a href="index.html#contact" class="btn btn-dark btn-full" style="padding:14px">Get my free demo →</a>
       </div>
-
     </div>
 
     <!-- AEO ADD-ON -->
-    <div class="aeo-card reveal reveal-delay-3">
+    <div class="aeo-addon reveal d3">
       <div>
-        <span class="eyebrow">Optional add-on · The smartest upgrade you'll buy this year</span>
-        <h3 style="font-size:clamp(18px,3vw,26px);font-weight:800;letter-spacing:-.03em;margin-bottom:10px">Get found in ChatGPT, Gemini & every AI search.</h3>
-        <p style="color:var(--muted);font-size:15px;max-width:500px">Your customers stopped Googling. AEO is the new SEO — we make sure when an AI gets asked about your trade in your suburb, your business comes up.</p>
-        <div class="aeo-features">
-          <span class="aeo-feature">Structured content LLMs actually cite</span>
-          <span class="aeo-feature">Monthly visibility checks across ChatGPT, Gemini & Claude</span>
-          <span class="aeo-feature">Plain-English monthly report</span>
-          <span class="aeo-feature">Continuous tuning as AI search evolves</span>
-          <span class="aeo-feature">Add or remove anytime</span>
-        </div>
+        <p class="aeo-tag">Optional add-on · The smartest upgrade you'll buy this year</p>
+        <h3>Get found in ChatGPT, Gemini & every AI search.</h3>
+        <p>Your customers stopped Googling. AEO (Answer Engine Optimisation) is the new SEO — we make sure when an AI gets asked about your trade in your suburb, your business comes up.</p>
+        <ul class="aeo-list">
+          <li>Structured content LLMs actually read and cite</li>
+          <li>Monthly visibility checks across ChatGPT, Gemini, Perplexity & Claude</li>
+          <li>Plain-English monthly report showing where you appear</li>
+          <li>Continuous tuning as AI search evolves</li>
+          <li>Add or remove anytime · No setup fee</li>
+        </ul>
       </div>
       <div class="aeo-price-block">
-        <p style="font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px">AEO add-on</p>
-        <p class="aeo-price" id="aeo-price">$165<span style="font-size:16px;color:var(--muted);font-weight:400">/mo</span></p>
-        <p style="font-size:12px;color:var(--muted);margin-bottom:16px" id="aeo-sub">Billed monthly</p>
-        <a href="https://buy.stripe.com/3cIcN478TgO03zY3Nx1wY00" id="aeo-btn" class="btn btn-accent" target="_blank">Add AEO →</a>
+        <p class="aeo-price-label">AEO add-on</p>
+        <p class="aeo-price-num" id="aeo-price">$165<span class="aeo-price-period">/mo</span></p>
+        <p class="aeo-price-note" id="aeo-billing">Billed monthly</p>
+        <a href="https://buy.stripe.com/3cIcN478TgO03zY3Nx1wY00" id="aeo-btn" class="btn btn-blue" target="_blank">Add AEO →</a>
       </div>
     </div>
 
@@ -138,11 +133,11 @@
 
 <div style="border-top:1px solid var(--rule)"></div>
 
-<section class="section-sm">
+<section style="padding:80px 0">
   <div class="container-sm" style="text-align:center">
-    <h2 style="font-size:clamp(24px,4vw,38px);font-weight:800;letter-spacing:-.04em;margin-bottom:14px" class="reveal">See your business as a real website. Free.</h2>
-    <p style="color:var(--muted);font-size:16px;margin-bottom:28px" class="reveal reveal-delay-1">Tell us your trade and suburb. We'll send a working demo — free, no commitment.</p>
-    <a href="index.html#contact" class="btn btn-accent btn-lg reveal reveal-delay-2">Get my free demo →</a>
+    <h2 style="font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-.05em;color:var(--ink);margin-bottom:14px" class="reveal">See your business as a real website. Free.</h2>
+    <p style="color:var(--muted);font-size:17px;margin-bottom:32px" class="reveal d1">Tell us your trade and suburb. We'll send a working demo — free, no commitment.</p>
+    <a href="index.html#contact" class="btn btn-dark btn-lg reveal d2">Get my free demo →</a>
   </div>
 </section>
 
@@ -155,7 +150,7 @@
     </div>
     <div class="footer-bottom">
       <span>© 2025 Siteblast · All rights reserved // Websites That Win You Work.</span>
-      <span><a href="mailto:hello@siteblast.com.au" style="color:rgba(255,255,255,.35)">hello@siteblast.com.au</a></span>
+      <span><a href="mailto:hello@siteblast.com.au" style="color:rgba(255,255,255,.3)">hello@siteblast.com.au</a></span>
     </div>
   </div>
 </footer>
@@ -163,54 +158,25 @@
 <script>
 document.getElementById('nav-toggle').addEventListener('click',()=>document.getElementById('nav-links').classList.toggle('open'));
 
-// Scroll reveal
-const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-const plans = {
-  monthly: {
-    hostingPrice: '$220<span class="plan-period">/mo</span>',
-    hostingSub: 'Billed monthly · cancel anytime',
-    hostingBtn: 'https://buy.stripe.com/00w6oGgJt2Xac6ubfZ1wY01',
-    hostingLabel: 'Get started →',
-    aeoPrice: '$165<span style="font-size:16px;color:var(--muted);font-weight:400">/mo</span>',
-    aeoSub: 'Billed monthly',
-    aeoBtn: 'https://buy.stripe.com/3cIcN478TgO03zY3Nx1wY00',
-    aeoLabel: 'Add AEO →'
-  },
-  annual: {
-    hostingPrice: '$154<span class="plan-period">/mo</span>',
-    hostingSub: 'Billed annually · save 30%',
-    hostingBtn: 'https://buy.stripe.com/00w14meBl55i3zYdo71wY04',
-    hostingLabel: 'Get started — save 30% →',
-    aeoPrice: '$116<span style="font-size:16px;color:var(--muted);font-weight:400">/mo</span>',
-    aeoSub: 'Billed annually · save 30%',
-    aeoBtn: 'https://buy.stripe.com/14A9AS0KveFS1rQ3Nx1wY05',
-    aeoLabel: 'Add AEO — save 30% →'
-  }
+const plans={
+  monthly:{hostingPrice:'$220<span class="plan-period">/mo</span>',hostingBilling:'Billed monthly · cancel anytime',hostingUrl:'https://buy.stripe.com/00w6oGgJt2Xac6ubfZ1wY01',hostingLabel:'Get started →',aeoPrice:'$165<span class="aeo-price-period">/mo</span>',aeoBilling:'Billed monthly',aeoUrl:'https://buy.stripe.com/3cIcN478TgO03zY3Nx1wY00',aeoLabel:'Add AEO →'},
+  annual:{hostingPrice:'$154<span class="plan-period">/mo</span>',hostingBilling:'Billed annually · save 30%',hostingUrl:'https://buy.stripe.com/00w14meBl55i3zYdo71wY04',hostingLabel:'Get started — save 30% →',aeoPrice:'$116<span class="aeo-price-period">/mo</span>',aeoBilling:'Billed annually · save 30%',aeoUrl:'https://buy.stripe.com/14A9AS0KveFS1rQ3Nx1wY05',aeoLabel:'Add AEO — save 30% →'}
 };
 
-function setMonthly() {
-  document.getElementById('btn-monthly').classList.add('active');
-  document.getElementById('btn-annual').classList.remove('active');
-  applyPlan('monthly');
+function apply(p){
+  const pl=plans[p];
+  document.getElementById('hosting-price').innerHTML=pl.hostingPrice;
+  document.getElementById('hosting-billing').textContent=pl.hostingBilling;
+  const hb=document.getElementById('hosting-btn'); hb.href=pl.hostingUrl; hb.textContent=pl.hostingLabel;
+  document.getElementById('aeo-price').innerHTML=pl.aeoPrice;
+  document.getElementById('aeo-billing').textContent=pl.aeoBilling;
+  const ab=document.getElementById('aeo-btn'); ab.href=pl.aeoUrl; ab.textContent=pl.aeoLabel;
 }
-function setAnnual() {
-  document.getElementById('btn-annual').classList.add('active');
-  document.getElementById('btn-monthly').classList.remove('active');
-  applyPlan('annual');
-}
-function applyPlan(p) {
-  const plan = plans[p];
-  document.getElementById('hosting-price').innerHTML = plan.hostingPrice;
-  document.getElementById('hosting-sub').textContent = plan.hostingSub;
-  const hb = document.getElementById('hosting-btn');
-  hb.href = plan.hostingBtn; hb.textContent = plan.hostingLabel;
-  document.getElementById('aeo-price').innerHTML = plan.aeoPrice;
-  document.getElementById('aeo-sub').textContent = plan.aeoSub;
-  const ab = document.getElementById('aeo-btn');
-  ab.href = plan.aeoBtn; ab.textContent = plan.aeoLabel;
-}
+function setMonthly(){document.getElementById('btn-mo').classList.add('on');document.getElementById('btn-an').classList.remove('on');apply('monthly');}
+function setAnnual(){document.getElementById('btn-an').classList.add('on');document.getElementById('btn-mo').classList.remove('on');apply('annual');}
 </script>
 </body>
 </html>
