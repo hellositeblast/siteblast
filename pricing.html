@@ -578,6 +578,101 @@
     @media (max-width: 480px) {
       .p-features-grid { grid-template-columns: 1fr; }
     }
+
+    /* ── PRICING REVIEWS STRIP ── */
+    .p-reviews-strip {
+      border-top: 1px solid var(--border);
+      padding: 80px 0;
+    }
+    .p-reviews-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .p-reviews-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .p-reviews-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .p-reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .p-review-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .p-review-img-wrap {
+      background: #0a0a0a;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .p-review-img-wrap .mp2-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      background: #1a1a1a;
+    }
+    .p-review-img-wrap .mp2-url-blank {
+      flex: 1;
+      height: 14px;
+      background: rgba(255,255,255,.06);
+      border-radius: 4px;
+    }
+    .p-review-stars {
+      color: #f59e0b;
+      font-size: 13px;
+      padding: 14px 16px 8px;
+      letter-spacing: 1px;
+    }
+    .p-review-quote {
+      font-size: 13px;
+      color: var(--light);
+      line-height: 1.6;
+      padding: 0 16px 14px;
+      margin: 0;
+      font-style: normal;
+    }
+    .p-review-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-top: 1px solid rgba(255,255,255,.05);
+    }
+    .p-review-avatar {
+      width: 32px; height: 32px;
+      background: rgba(0,229,255,.1);
+      border: 1px solid rgba(0,229,255,.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .p-review-author strong { display: block; font-size: 13px; color: var(--pure); }
+    .p-review-author span { font-size: 11px; color: var(--mid); }
+    @media (max-width: 700px) {
+      .p-reviews-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -708,6 +803,67 @@
           <span>Domain stays yours</span>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- SOCIAL PROOF STRIP -->
+<div class="p-reviews-strip">
+  <div class="p-reviews-inner">
+    <p class="p-reviews-label">What customers say about the value</p>
+    <div class="p-reviews-grid">
+
+      <div class="p-review-card">
+        <div class="p-review-img-wrap">
+          <div class="mp2-bar"><div class="mp2-dots"><span></span><span></span><span></span></div><div class="mp2-url-blank"></div></div>
+          <div style="position:relative;overflow:hidden;height:160px;">
+            <img src="review-06.png" alt="Client website" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+            <div style="position:absolute;top:6px;left:8px;width:90px;height:12px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);background:rgba(0,0,0,.3);border-radius:2px;"></div>
+            <div style="position:absolute;top:6px;right:8px;width:60px;height:12px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);background:rgba(0,0,0,.3);border-radius:2px;"></div>
+          </div>
+        </div>
+        <div class="p-review-stars">★★★★★</div>
+        <blockquote class="p-review-quote">"Real Australian support means I can actually get someone on the phone. Had a small issue on a Friday afternoon — sorted by 5pm."</blockquote>
+        <div class="p-review-author">
+          <div class="p-review-avatar">JM</div>
+          <div><strong>Jason M.</strong><span>Roofing · NSW</span></div>
+        </div>
+      </div>
+
+      <div class="p-review-card">
+        <div class="p-review-img-wrap">
+          <div class="mp2-bar"><div class="mp2-dots"><span></span><span></span><span></span></div><div class="mp2-url-blank"></div></div>
+          <div style="position:relative;overflow:hidden;height:160px;">
+            <img src="review-11.png" alt="Client website" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+            <div style="position:absolute;top:6px;left:8px;width:90px;height:12px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);background:rgba(0,0,0,.3);border-radius:2px;"></div>
+            <div style="position:absolute;top:6px;right:8px;width:60px;height:12px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);background:rgba(0,0,0,.3);border-radius:2px;"></div>
+          </div>
+        </div>
+        <div class="p-review-stars">★★★★★</div>
+        <blockquote class="p-review-quote">"My competitors all have these tired 2015-looking sites. Mine looks like it belongs to a company ten times my size. Clients comment on it constantly."</blockquote>
+        <div class="p-review-author">
+          <div class="p-review-avatar">BH</div>
+          <div><strong>Brad H.</strong><span>Performance Coaching · QLD</span></div>
+        </div>
+      </div>
+
+      <div class="p-review-card">
+        <div class="p-review-img-wrap">
+          <div class="mp2-bar"><div class="mp2-dots"><span></span><span></span><span></span></div><div class="mp2-url-blank"></div></div>
+          <div style="position:relative;overflow:hidden;height:160px;">
+            <img src="review-12.png" alt="Client website" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+            <div style="position:absolute;top:6px;left:8px;width:90px;height:12px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);background:rgba(0,0,0,.3);border-radius:2px;"></div>
+            <div style="position:absolute;top:6px;right:8px;width:60px;height:12px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);background:rgba(0,0,0,.3);border-radius:2px;"></div>
+          </div>
+        </div>
+        <div class="p-review-stars">★★★★★</div>
+        <blockquote class="p-review-quote">"Set and forget is exactly how it works. I haven't had to think about my website once since it went live. It just runs, and the enquiries keep coming in."</blockquote>
+        <div class="p-review-author">
+          <div class="p-review-avatar">CR</div>
+          <div><strong>Craig R.</strong><span>Segway Tours · QLD</span></div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
