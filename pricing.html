@@ -11,6 +11,355 @@
   <link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="favicon.png">
+  <style>
+    /* ── PRICING PAGE ENHANCEMENTS ── */
+
+    /* Glow orbs behind hero */
+    .pricing-hero-wrap { position: relative; overflow: hidden; }
+    .pricing-hero-wrap::before {
+      content: '';
+      position: absolute;
+      top: -120px; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse at center, rgba(0,229,255,.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* FREE card — glowing premium look */
+    .free-site-card {
+      position: relative;
+      background: linear-gradient(135deg, rgba(0,229,255,.06) 0%, rgba(0,229,255,.02) 100%);
+      border: 1px solid rgba(0,229,255,.25);
+      border-radius: 20px;
+      padding: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+      margin-bottom: 16px;
+      box-shadow: 0 0 40px rgba(0,229,255,.07), inset 0 1px 0 rgba(255,255,255,.06);
+      overflow: hidden;
+    }
+    .free-site-card::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 220px; height: 220px;
+      background: radial-gradient(circle, rgba(0,229,255,.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .free-site-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .free-site-h {
+      font-size: clamp(18px,2.5vw,24px);
+      font-weight: 800;
+      color: var(--pure);
+      letter-spacing: -.03em;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .free-site-sub { color: var(--light); font-size: 15px; line-height: 1.6; }
+    .free-site-price { text-align: center; flex-shrink: 0; }
+    .free-site-was { display: flex; align-items: baseline; gap: 6px; justify-content: center; margin-bottom: 4px; }
+    .free-site-was-num {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--mid);
+      text-decoration: line-through;
+    }
+    .free-site-was-label { font-size: 12px; color: var(--mid); }
+    .free-site-free {
+      font-size: 52px;
+      font-weight: 900;
+      letter-spacing: -.04em;
+      color: var(--accent);
+      line-height: 1;
+      text-shadow: 0 0 30px rgba(0,229,255,.4);
+    }
+    .free-site-note { font-size: 12px; color: var(--mid); margin-top: 6px; }
+
+    /* Trust strip */
+    .pricing-trust-strip {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding: 16px 0 40px;
+    }
+    .pts-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      color: var(--mid);
+    }
+    .pts-item svg { flex-shrink: 0; }
+
+    /* Billing toggle */
+    .pricing-toggle-wrap { display: flex; justify-content: center; margin-bottom: 32px; }
+    .pricing-toggle {
+      display: inline-flex;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 100px;
+      padding: 4px;
+      gap: 4px;
+    }
+    .ptoggle-btn {
+      background: none;
+      border: none;
+      color: var(--mid);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 8px 20px;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all .2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ptoggle-active {
+      background: var(--accent);
+      color: #000;
+    }
+    .ptoggle-save {
+      background: rgba(0,0,0,.2);
+      color: inherit;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 100px;
+    }
+
+    /* Main pricing card */
+    .new-pricing-wrap { margin-bottom: 48px; }
+    .np-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 2px 40px rgba(0,0,0,.3);
+    }
+    .np-card-top {
+      padding: 40px 40px 0;
+      background: linear-gradient(180deg, rgba(0,229,255,.04) 0%, transparent 100%);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      padding-bottom: 32px;
+    }
+    .np-card-topline { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 12px; flex-wrap: wrap; }
+    .np-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .np-title {
+      font-size: clamp(20px,2.5vw,26px);
+      font-weight: 800;
+      color: var(--pure);
+      letter-spacing: -.03em;
+      line-height: 1.2;
+    }
+    .np-badge {
+      background: rgba(0,229,255,.1);
+      border: 1px solid rgba(0,229,255,.2);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 100px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .np-sub { color: var(--light); font-size: 15px; line-height: 1.6; max-width: 600px; }
+
+    /* Price row */
+    .np-price-row {
+      padding: 28px 40px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .np-price {
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--pure);
+      letter-spacing: -.04em;
+      line-height: 1;
+    }
+    .np-price span { font-size: 16px; font-weight: 500; color: var(--mid); margin-left: 4px; }
+
+    /* Features grid */
+    .np-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      padding: 0 40px;
+    }
+    .np-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,.04);
+    }
+    .np-feature:nth-last-child(-n+2) { border-bottom: none; }
+    .np-feature svg { width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; }
+    .np-feature strong { display: block; font-size: 14px; color: var(--pure); margin-bottom: 3px; }
+    .np-feature p { font-size: 13px; color: var(--mid); line-height: 1.5; margin: 0; }
+
+    /* CTA area */
+    .np-cta-area {
+      padding: 32px 40px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      border-top: 1px solid rgba(255,255,255,.06);
+      background: linear-gradient(0deg, rgba(0,229,255,.03) 0%, transparent 100%);
+    }
+    .np-cta {
+      font-size: 16px;
+      padding: 16px 32px;
+      border-radius: 100px;
+      font-weight: 800;
+    }
+    .pricing-note { font-size: 13px; color: var(--mid); margin: 0; }
+    .pricing-note a { color: var(--accent); }
+
+    /* Trust icons under CTA */
+    .np-trust-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+    .np-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--mid);
+    }
+    .np-trust-item svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* AEO addon box */
+    .aeo-addon-box {
+      margin: 0 40px 40px;
+      background: linear-gradient(135deg, rgba(255,255,255,.03) 0%, rgba(0,229,255,.04) 100%);
+      border: 1px solid rgba(0,229,255,.15);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .aeo-addon-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+    .aeo-pulse {
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(0,229,255,.4);
+      animation: pulse-ring 2s infinite;
+    }
+    @keyframes pulse-ring {
+      0% { box-shadow: 0 0 0 0 rgba(0,229,255,.4); }
+      70% { box-shadow: 0 0 0 8px rgba(0,229,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(0,229,255,0); }
+    }
+    .aeo-addon-inner { display: flex; gap: 32px; padding: 28px; align-items: flex-start; flex-wrap: wrap; }
+    .aeo-addon-left { flex: 1; min-width: 240px; }
+    .aeo-addon-h { font-size: clamp(16px,2vw,20px); font-weight: 800; color: var(--pure); letter-spacing: -.02em; margin-bottom: 10px; line-height: 1.3; }
+    .aeo-addon-h em { color: var(--accent); font-style: normal; }
+    .aeo-addon-sub { font-size: 14px; color: var(--light); line-height: 1.6; margin-bottom: 16px; }
+    .aeo-ai-logos { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+    .aeo-ai-chip {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 100px;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--light);
+    }
+    .aeo-addon-list { list-style: none; padding: 0; margin: 0 0 12px; display: flex; flex-direction: column; gap: 8px; }
+    .aeo-addon-list li { display: flex; gap: 10px; font-size: 14px; color: var(--light); }
+    .aeo-addon-list span { color: var(--accent); font-weight: 700; flex-shrink: 0; }
+    .aeo-addon-honest { font-size: 12px; color: var(--mid); font-style: italic; }
+    .aeo-addon-right { flex-shrink: 0; }
+    .aeo-price-card {
+      background: rgba(0,0,0,.3);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 14px;
+      padding: 24px;
+      text-align: center;
+      min-width: 180px;
+    }
+    .aeo-addon-price-label { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--mid); margin-bottom: 8px; }
+    .aeo-addon-price { font-size: 40px; font-weight: 900; color: var(--accent); letter-spacing: -.04em; line-height: 1; }
+    .aeo-addon-price span { font-size: 16px; font-weight: 500; color: var(--mid); }
+    .aeo-addon-gst { font-size: 12px; color: var(--mid); margin: 4px 0 16px; }
+    .aeo-addon-btn { width: 100%; text-align: center; border-radius: 100px; font-weight: 700; }
+    .aeo-addon-cancel { font-size: 12px; color: var(--mid); margin-top: 8px; }
+    .aeo-divider { border: none; border-top: 1px solid rgba(255,255,255,.06); margin: 16px 0; }
+    .aeo-stat { text-align: center; margin-bottom: 8px; }
+    .aeo-stat-num { display: block; font-size: 24px; font-weight: 900; color: var(--pure); letter-spacing: -.03em; }
+    .aeo-stat-label { font-size: 11px; color: var(--mid); }
+
+    /* Bottom CTA section */
+    .pricing-bottom-cta {
+      text-align: center;
+      padding: 80px 24px;
+    }
+    .pricing-bottom-cta h2 {
+      font-size: clamp(24px,4vw,38px);
+      font-weight: 900;
+      color: var(--pure);
+      letter-spacing: -.04em;
+      margin-bottom: 12px;
+    }
+    .pricing-bottom-cta p {
+      color: var(--light);
+      font-size: 16px;
+      max-width: 480px;
+      margin: 0 auto 32px;
+    }
+
+    @media (max-width: 700px) {
+      .free-site-card { flex-direction: column; text-align: center; }
+      .np-features { grid-template-columns: 1fr; }
+      .np-feature:nth-last-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.04); }
+      .np-feature:last-child { border-bottom: none; }
+      .np-card-top, .np-price-row, .np-cta-area, .aeo-addon-box { padding-left: 20px; padding-right: 20px; }
+      .aeo-addon-box { margin: 0 20px 28px; }
+      .aeo-addon-inner { flex-direction: column; }
+      .aeo-addon-right { width: 100%; }
+      .aeo-price-card { min-width: unset; }
+      .np-price-row { justify-content: center; }
+    }
+  </style>
 </head>
 <body>
 
@@ -31,19 +380,21 @@
 </nav>
 
 <!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="container-sm">
-    <span class="eyebrow">Pricing · simple, fixed, no surprises</span>
-    <h1>One website. One simple price.</h1>
-    <p>No tiers. No haggling. No "request a quote." A custom-built professional website — at a price you can sign off on in your lunch break.</p>
-  </div>
-</section>
+<div class="pricing-hero-wrap">
+  <section class="page-hero">
+    <div class="container-sm">
+      <span class="eyebrow reveal reveal-up">Pricing · simple, fixed, no surprises</span>
+      <h1 class="reveal reveal-up">One website. One simple price.</h1>
+      <p class="reveal reveal-up">No tiers. No haggling. No "request a quote." A custom-built professional website — at a price you can sign off on in your lunch break.</p>
+    </div>
+  </section>
+</div>
 
 <section class="section">
   <div class="container-sm">
 
     <!-- FREE WEBSITE CARD -->
-    <div class="free-site-card">
+    <div class="free-site-card reveal reveal-up">
       <div class="free-site-left">
         <p class="free-site-label">The whole website</p>
         <h2 class="free-site-h">A modern, professional website. Built to win more customers.</h2>
@@ -59,21 +410,42 @@
       </div>
     </div>
 
-    <p style="text-align:center;font-size:13px;color:var(--mid);margin-bottom:56px">// No card. No commitment. Free demo first. <a href="index.html#contact">Get my free demo →</a></p>
+    <!-- Trust strip -->
+    <div class="pricing-trust-strip reveal reveal-up">
+      <div class="pts-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        No card required
+      </div>
+      <div class="pts-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Free demo first
+      </div>
+      <div class="pts-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+        No lock-in contract
+      </div>
+      <div class="pts-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Live in 48 hours
+      </div>
+      <div class="pts-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Real Australian support
+      </div>
+    </div>
 
     <!-- BILLING TOGGLE -->
-    <div class="pricing-toggle-wrap">
+    <div class="pricing-toggle-wrap reveal reveal-up">
       <div class="pricing-toggle" id="billing-toggle">
         <button onclick="showMonthly()" id="btn-monthly" class="ptoggle-btn ptoggle-active">Monthly</button>
         <button onclick="showAnnual()" id="btn-annual" class="ptoggle-btn">Annual <span class="ptoggle-save">save 30%</span></button>
       </div>
     </div>
 
-    <!-- MAIN PRICING CARD with AEO addon built in -->
-    <div class="new-pricing-wrap">
-
-      <!-- SUPPORT PLAN -->
+    <!-- MAIN PRICING CARD -->
+    <div class="new-pricing-wrap reveal reveal-up">
       <div class="np-card">
+
         <div class="np-card-top">
           <div class="np-card-topline">
             <div>
@@ -96,7 +468,7 @@
           </div>
           <div class="np-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            <div><strong>Global CDN</strong><p>Served from the data centre nearest each visitor.</p></div>
+            <div><strong>Global CDN</strong><p>Served from the data centre nearest each visitor. Fast everywhere, every time.</p></div>
           </div>
           <div class="np-feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -128,8 +500,28 @@
           </div>
         </div>
 
-        <a href="https://buy.stripe.com/00w6oGgJt2Xac6ubfZ1wY01" id="hosting-btn" class="btn np-cta" target="_blank">Get started — $220/month →</a>
-        <p class="pricing-note">Or <a href="index.html#contact">get a free demo first</a> — no commitment required.</p>
+        <div class="np-cta-area">
+          <a href="https://buy.stripe.com/00w6oGgJt2Xac6ubfZ1wY01" id="hosting-btn" class="btn np-cta" target="_blank">Get started — $220/month →</a>
+          <p class="pricing-note">Or <a href="index.html#contact">get a free demo first</a> — no commitment required.</p>
+          <div class="np-trust-row">
+            <div class="np-trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              No card to start
+            </div>
+            <div class="np-trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+              Cancel anytime
+            </div>
+            <div class="np-trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Australian support
+            </div>
+            <div class="np-trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Domain stays yours
+            </div>
+          </div>
+        </div>
 
         <!-- AEO ADDON -->
         <div class="aeo-addon-box">
@@ -158,7 +550,7 @@
             </div>
             <div class="aeo-addon-right">
               <div class="aeo-price-card">
-                <p class="aeo-addon-price-label">ADD-ON · NO SETUP FEE</p>
+                <p class="aeo-addon-price-label">Add-on · no setup fee</p>
                 <p class="aeo-addon-price" id="aeo-price">$165<span>/mo</span></p>
                 <p class="aeo-addon-gst">inc. GST</p>
                 <a href="https://buy.stripe.com/3cIcN478TgO03zY3Nx1wY00" id="aeo-btn" class="btn aeo-addon-btn" target="_blank">Add AEO →</a>
@@ -186,10 +578,11 @@
 <hr class="divider">
 
 <section class="section-sm">
-  <div class="container-sm" style="text-align:center">
-    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:var(--pure);letter-spacing:-.04em;margin-bottom:16px">See your business as a real website. Free.</h2>
-    <p style="color:var(--light);font-size:16px;margin-bottom:32px">Tell us your trade and your suburb. We'll send back a working demo, free, no commitment.</p>
+  <div class="container-sm pricing-bottom-cta reveal reveal-up">
+    <h2>See your business as a real website. Free.</h2>
+    <p>Tell us your trade and your suburb. We'll send back a working demo, free, no commitment.</p>
     <a href="index.html#contact" class="btn">Get my free demo →</a>
+    <p style="font-size:13px;color:var(--mid);margin-top:16px">// No card. No commitment. Free demo first.</p>
   </div>
 </section>
 
@@ -268,6 +661,18 @@
     document.getElementById('aeo-btn').href = links.aeo.annual.url;
     document.getElementById('aeo-btn').textContent = links.aeo.annual.label;
   }
+
+  // Scroll reveals
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('revealed');
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => revealObs.observe(el));
 </script>
 </body>
 </html>
