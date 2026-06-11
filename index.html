@@ -1079,8 +1079,8 @@
 </script>
 <!-- Floating mobile CTA -->
 <a href="#contact" class="fab-cta" id="fab-cta">
-  <span class="fab-icon">⚡</span>
-  <span class="fab-label">Get my free demo</span>
+  <img src="sblogo.png" alt="" class="fab-logo">
+  <span class="fab-label">Get A Free Demo</span>
 </a>
 
 <style>
@@ -1095,14 +1095,14 @@
   font-weight: 800;
   font-size: 15px;
   letter-spacing: -.01em;
-  padding: 14px 28px;
+  padding: 12px 22px 12px 16px;
   border-radius: 100px;
-  text-decoration: none;
+  text-decoration: none !important;
   box-shadow: 0 4px 24px rgba(0,229,255,.35), 0 2px 8px rgba(0,0,0,.4);
   z-index: 999;
   white-space: nowrap;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   transition: transform .15s ease, box-shadow .15s ease, opacity .3s ease;
   opacity: 0;
   pointer-events: none;
@@ -1114,7 +1114,20 @@
 .fab-cta:active {
   transform: translateX(-50%) scale(.96);
 }
-.fab-icon { font-size: 16px; line-height: 1; }
+.fab-cta:hover { text-decoration: none !important; }
+.fab-logo {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: brightness(0);
+}
+.fab-label {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -.01em;
+  color: #000;
+}
 @media (max-width: 768px) {
   .fab-cta { display: flex; }
 }
