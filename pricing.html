@@ -12,352 +12,538 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="favicon.png">
   <style>
-    /* ── PRICING PAGE ENHANCEMENTS ── */
-
-    /* Glow orbs behind hero */
-    .pricing-hero-wrap { position: relative; overflow: hidden; }
-    .pricing-hero-wrap::before {
-      content: '';
-      position: absolute;
-      top: -120px; left: 50%;
-      transform: translateX(-50%);
-      width: 600px; height: 400px;
-      background: radial-gradient(ellipse at center, rgba(0,229,255,.08) 0%, transparent 70%);
-      pointer-events: none;
+    /* ── PRICING PAGE ── */
+    .p-hero {
+      padding: 100px 0 80px;
+      text-align: center;
     }
-
-    /* FREE card — glowing premium look */
-    .free-site-card {
-      position: relative;
-      background: linear-gradient(135deg, rgba(0,229,255,.06) 0%, rgba(0,229,255,.02) 100%);
-      border: 1px solid rgba(0,229,255,.25);
-      border-radius: 20px;
-      padding: 40px;
-      display: flex;
-      justify-content: space-between;
+    .p-hero-eyebrow {
+      display: inline-flex;
       align-items: center;
-      gap: 32px;
-      margin-bottom: 16px;
-      box-shadow: 0 0 40px rgba(0,229,255,.07), inset 0 1px 0 rgba(255,255,255,.06);
-      overflow: hidden;
-    }
-    .free-site-card::before {
-      content: '';
-      position: absolute;
-      top: -60px; right: -60px;
-      width: 220px; height: 220px;
-      background: radial-gradient(circle, rgba(0,229,255,.12) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .free-site-label {
+      gap: 8px;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: .12em;
+      letter-spacing: .14em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 10px;
+      margin-bottom: 28px;
     }
-    .free-site-h {
-      font-size: clamp(18px,2.5vw,24px);
-      font-weight: 800;
+    .p-hero-eyebrow::before {
+      content: '';
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent);
+    }
+    .p-hero h1 {
+      font-size: clamp(40px, 7vw, 80px);
+      font-weight: 900;
+      letter-spacing: -.05em;
+      line-height: .95;
       color: var(--pure);
-      letter-spacing: -.03em;
-      margin-bottom: 10px;
-      line-height: 1.2;
+      margin-bottom: 24px;
     }
-    .free-site-sub { color: var(--light); font-size: 15px; line-height: 1.6; }
-    .free-site-price { text-align: center; flex-shrink: 0; }
-    .free-site-was { display: flex; align-items: baseline; gap: 6px; justify-content: center; margin-bottom: 4px; }
-    .free-site-was-num {
+    .p-hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+    .p-hero-sub {
       font-size: 18px;
-      font-weight: 700;
-      color: var(--mid);
-      text-decoration: line-through;
+      color: var(--light);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.6;
     }
-    .free-site-was-label { font-size: 12px; color: var(--mid); }
-    .free-site-free {
-      font-size: 52px;
+
+    /* ── FREE BLOCK ── */
+    .p-free-block {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 80px 0;
+    }
+    .p-free-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .p-free-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .p-free-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .p-free-headline {
+      font-size: clamp(32px, 5vw, 58px);
       font-weight: 900;
       letter-spacing: -.04em;
-      color: var(--accent);
       line-height: 1;
-      text-shadow: 0 0 30px rgba(0,229,255,.4);
+      color: var(--pure);
+      margin-bottom: 20px;
     }
-    .free-site-note { font-size: 12px; color: var(--mid); margin-top: 6px; }
-
-    /* Trust strip */
-    .pricing-trust-strip {
+    .p-free-headline em {
+      font-style: normal;
+      color: var(--accent);
+    }
+    .p-free-desc {
+      font-size: 17px;
+      color: var(--light);
+      max-width: 560px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+    .p-free-price-row {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 24px;
+      align-items: flex-end;
+      gap: 20px;
       flex-wrap: wrap;
-      padding: 16px 0 40px;
     }
-    .pts-item {
-      display: flex;
+    .p-free-price {
+      font-size: clamp(64px, 12vw, 120px);
+      font-weight: 900;
+      letter-spacing: -.06em;
+      line-height: 1;
+      color: var(--accent);
+      text-shadow: 0 0 60px rgba(0,229,255,.3);
+    }
+    .p-free-price-meta {
+      padding-bottom: 12px;
+    }
+    .p-free-was {
+      font-size: 14px;
+      color: var(--mid);
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+    .p-free-badge {
+      display: inline-flex;
       align-items: center;
-      gap: 7px;
+      gap: 6px;
+      background: rgba(0,229,255,.1);
+      border: 1px solid rgba(0,229,255,.2);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 100px;
+    }
+    .p-free-note {
+      margin-top: 24px;
       font-size: 13px;
       color: var(--mid);
     }
-    .pts-item svg { flex-shrink: 0; }
+    .p-free-note a { color: var(--accent); }
 
-    /* Billing toggle */
-    .pricing-toggle-wrap { display: flex; justify-content: center; margin-bottom: 32px; }
-    .pricing-toggle {
+    /* ── SUPPORT PLAN ── */
+    .p-support-block {
+      padding: 100px 0 0;
+    }
+    .p-support-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .p-support-header {
+      margin-bottom: 64px;
+    }
+    .p-support-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .p-support-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .p-support-title {
+      font-size: clamp(28px, 4.5vw, 52px);
+      font-weight: 900;
+      letter-spacing: -.04em;
+      line-height: 1.05;
+      color: var(--pure);
+      margin-bottom: 20px;
+    }
+    .p-support-title s {
+      color: var(--mid);
+      font-weight: 400;
+      text-decoration-color: var(--mid);
+    }
+    .p-support-sub {
+      font-size: 17px;
+      color: var(--light);
+      max-width: 560px;
+      line-height: 1.6;
+    }
+
+    /* Price + toggle row */
+    .p-price-toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0;
+    }
+    .p-price-big {
+      font-size: clamp(52px, 8vw, 80px);
+      font-weight: 900;
+      letter-spacing: -.05em;
+      color: var(--pure);
+      line-height: 1;
+    }
+    .p-price-big span {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--mid);
+      letter-spacing: 0;
+    }
+    .p-billing-toggle {
       display: inline-flex;
-      background: rgba(255,255,255,.05);
+      background: rgba(255,255,255,.04);
       border: 1px solid rgba(255,255,255,.08);
       border-radius: 100px;
       padding: 4px;
       gap: 4px;
     }
-    .ptoggle-btn {
+    .p-toggle-btn {
       background: none;
       border: none;
       color: var(--mid);
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
-      padding: 8px 20px;
+      padding: 8px 18px;
       border-radius: 100px;
       cursor: pointer;
       transition: all .2s;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
     }
-    .ptoggle-active {
+    .p-toggle-btn.active {
       background: var(--accent);
       color: #000;
     }
-    .ptoggle-save {
+    .p-save-badge {
       background: rgba(0,0,0,.2);
-      color: inherit;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
-      padding: 2px 7px;
+      padding: 2px 6px;
       border-radius: 100px;
     }
 
-    /* Main pricing card */
-    .new-pricing-wrap { margin-bottom: 48px; }
-    .np-card {
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,.07);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 2px 40px rgba(0,0,0,.3);
+    /* Features grid — 3 col like competitor */
+    .p-features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-left: 1px solid var(--border);
+      border-top: 1px solid var(--border);
     }
-    .np-card-top {
-      padding: 40px 40px 0;
-      background: linear-gradient(180deg, rgba(0,229,255,.04) 0%, transparent 100%);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-      padding-bottom: 32px;
+    .p-feat {
+      padding: 28px 24px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
-    .np-card-topline { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 12px; flex-wrap: wrap; }
-    .np-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-    .np-title {
-      font-size: clamp(20px,2.5vw,26px);
-      font-weight: 800;
-      color: var(--pure);
-      letter-spacing: -.03em;
-      line-height: 1.2;
-    }
-    .np-badge {
-      background: rgba(0,229,255,.1);
-      border: 1px solid rgba(0,229,255,.2);
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 600;
-      padding: 6px 14px;
-      border-radius: 100px;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    .np-sub { color: var(--light); font-size: 15px; line-height: 1.6; max-width: 600px; }
-
-    /* Price row */
-    .np-price-row {
-      padding: 28px 40px;
-      border-bottom: 1px solid rgba(255,255,255,.06);
+    .p-feat-icon {
+      width: 32px; height: 32px;
+      background: rgba(0,229,255,.08);
+      border-radius: 8px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+    .p-feat-icon svg { width: 16px; height: 16px; }
+    .p-feat strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--pure);
+      margin-bottom: 5px;
+    }
+    .p-feat p {
+      font-size: 13px;
+      color: var(--mid);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* CTA row */
+    .p-cta-row {
+      padding: 48px 0;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--border);
+    }
+    .p-cta-btn {
+      font-size: 16px;
+      padding: 16px 36px;
+      border-radius: 100px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .p-cta-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .p-cta-meta-main {
+      font-size: 14px;
+      color: var(--light);
+    }
+    .p-cta-meta-main a { color: var(--accent); }
+    .p-cta-trust {
+      display: flex;
       gap: 16px;
       flex-wrap: wrap;
     }
-    .np-price {
-      font-size: 48px;
-      font-weight: 900;
-      color: var(--pure);
-      letter-spacing: -.04em;
-      line-height: 1;
-    }
-    .np-price span { font-size: 16px; font-weight: 500; color: var(--mid); margin-left: 4px; }
-
-    /* Features grid */
-    .np-features {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      padding: 0 40px;
-    }
-    .np-feature {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 20px 0;
-      border-bottom: 1px solid rgba(255,255,255,.04);
-    }
-    .np-feature:nth-last-child(-n+2) { border-bottom: none; }
-    .np-feature svg { width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; }
-    .np-feature strong { display: block; font-size: 14px; color: var(--pure); margin-bottom: 3px; }
-    .np-feature p { font-size: 13px; color: var(--mid); line-height: 1.5; margin: 0; }
-
-    /* CTA area */
-    .np-cta-area {
-      padding: 32px 40px 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
-      border-top: 1px solid rgba(255,255,255,.06);
-      background: linear-gradient(0deg, rgba(0,229,255,.03) 0%, transparent 100%);
-    }
-    .np-cta {
-      font-size: 16px;
-      padding: 16px 32px;
-      border-radius: 100px;
-      font-weight: 800;
-    }
-    .pricing-note { font-size: 13px; color: var(--mid); margin: 0; }
-    .pricing-note a { color: var(--accent); }
-
-    /* Trust icons under CTA */
-    .np-trust-row {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 4px;
-    }
-    .np-trust-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
+    .p-cta-trust span {
       font-size: 12px;
       color: var(--mid);
-    }
-    .np-trust-item svg { width: 14px; height: 14px; flex-shrink: 0; }
-
-    /* AEO addon box */
-    .aeo-addon-box {
-      margin: 0 40px 40px;
-      background: linear-gradient(135deg, rgba(255,255,255,.03) 0%, rgba(0,229,255,.04) 100%);
-      border: 1px solid rgba(0,229,255,.15);
-      border-radius: 16px;
-      overflow: hidden;
-    }
-    .aeo-addon-eyebrow {
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 12px 20px;
-      border-bottom: 1px solid rgba(255,255,255,.06);
-      font-size: 11px;
+      gap: 5px;
+    }
+    .p-cta-trust span::before {
+      content: '✓';
+      color: var(--accent);
       font-weight: 700;
+    }
+
+    /* ── AEO BLOCK ── */
+    .p-aeo-block {
+      padding: 100px 0;
+      border-top: 1px solid var(--border);
+    }
+    .p-aeo-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .p-aeo-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .p-aeo-tag {
+      background: var(--accent);
+      color: #000;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .p-aeo-sub-tag {
+      font-size: 11px;
+      font-weight: 600;
       letter-spacing: .1em;
       text-transform: uppercase;
       color: var(--mid);
     }
-    .aeo-pulse {
-      width: 8px; height: 8px;
-      background: var(--accent);
-      border-radius: 50%;
-      box-shadow: 0 0 0 0 rgba(0,229,255,.4);
-      animation: pulse-ring 2s infinite;
+    .p-aeo-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 60px;
+      align-items: start;
     }
+    .p-aeo-title {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 900;
+      letter-spacing: -.04em;
+      line-height: 1.05;
+      color: var(--pure);
+      margin-bottom: 20px;
+    }
+    .p-aeo-title em {
+      font-style: normal;
+      color: var(--accent);
+    }
+    .p-aeo-desc {
+      font-size: 16px;
+      color: var(--light);
+      line-height: 1.6;
+      margin-bottom: 28px;
+      max-width: 480px;
+    }
+    .p-aeo-list {
+      list-style: none;
+      padding: 0; margin: 0 0 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .p-aeo-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      color: var(--light);
+    }
+    .p-aeo-list li::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .p-aeo-honest {
+      font-size: 13px;
+      color: var(--mid);
+      font-style: italic;
+    }
+    .p-aeo-ai-chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .p-aeo-chip {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--light);
+    }
+    /* AEO price card */
+    .p-aeo-card {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 28px;
+      position: sticky;
+      top: 100px;
+    }
+    .p-aeo-card-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 4px;
+    }
+    .p-aeo-card-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--pure);
+      letter-spacing: -.02em;
+      margin-bottom: 20px;
+    }
+    .p-aeo-toggle {
+      display: inline-flex;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 100px;
+      padding: 3px;
+      gap: 3px;
+      margin-bottom: 20px;
+    }
+    .p-aeo-tbtn {
+      background: none;
+      border: none;
+      color: var(--mid);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all .2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .p-aeo-tbtn.active { background: var(--accent); color: #000; }
+    .p-aeo-price {
+      font-size: 52px;
+      font-weight: 900;
+      letter-spacing: -.04em;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .p-aeo-price span { font-size: 16px; font-weight: 500; color: var(--mid); }
+    .p-aeo-gst { font-size: 12px; color: var(--mid); margin-bottom: 20px; }
+    .p-aeo-card-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      border-radius: 100px;
+      font-weight: 700;
+      padding: 13px;
+      margin-bottom: 8px;
+    }
+    .p-aeo-cancel { font-size: 12px; color: var(--mid); text-align: center; }
+    .p-aeo-divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+    .p-aeo-stats { display: flex; gap: 12px; }
+    .p-aeo-stat { flex: 1; text-align: center; }
+    .p-aeo-stat-num { display: block; font-size: 28px; font-weight: 900; color: var(--pure); letter-spacing: -.03em; }
+    .p-aeo-stat-label { font-size: 11px; color: var(--mid); line-height: 1.3; }
+
+    /* ── BOTTOM CTA ── */
+    .p-bottom-cta {
+      border-top: 1px solid var(--border);
+      padding: 100px 0;
+      text-align: center;
+    }
+    .p-bottom-cta h2 {
+      font-size: clamp(28px, 5vw, 56px);
+      font-weight: 900;
+      letter-spacing: -.04em;
+      color: var(--pure);
+      margin-bottom: 16px;
+      line-height: 1;
+    }
+    .p-bottom-cta p {
+      font-size: 17px;
+      color: var(--light);
+      max-width: 440px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+
+    /* Anim pulse */
     @keyframes pulse-ring {
       0% { box-shadow: 0 0 0 0 rgba(0,229,255,.4); }
       70% { box-shadow: 0 0 0 8px rgba(0,229,255,0); }
       100% { box-shadow: 0 0 0 0 rgba(0,229,255,0); }
     }
-    .aeo-addon-inner { display: flex; gap: 32px; padding: 28px; align-items: flex-start; flex-wrap: wrap; }
-    .aeo-addon-left { flex: 1; min-width: 240px; }
-    .aeo-addon-h { font-size: clamp(16px,2vw,20px); font-weight: 800; color: var(--pure); letter-spacing: -.02em; margin-bottom: 10px; line-height: 1.3; }
-    .aeo-addon-h em { color: var(--accent); font-style: normal; }
-    .aeo-addon-sub { font-size: 14px; color: var(--light); line-height: 1.6; margin-bottom: 16px; }
-    .aeo-ai-logos { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
-    .aeo-ai-chip {
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: 100px;
-      padding: 4px 12px;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--light);
-    }
-    .aeo-addon-list { list-style: none; padding: 0; margin: 0 0 12px; display: flex; flex-direction: column; gap: 8px; }
-    .aeo-addon-list li { display: flex; gap: 10px; font-size: 14px; color: var(--light); }
-    .aeo-addon-list span { color: var(--accent); font-weight: 700; flex-shrink: 0; }
-    .aeo-addon-honest { font-size: 12px; color: var(--mid); font-style: italic; }
-    .aeo-addon-right { flex-shrink: 0; }
-    .aeo-price-card {
-      background: rgba(0,0,0,.3);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 14px;
-      padding: 24px;
-      text-align: center;
-      min-width: 180px;
-    }
-    .aeo-addon-price-label { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--mid); margin-bottom: 8px; }
-    .aeo-addon-price { font-size: 40px; font-weight: 900; color: var(--accent); letter-spacing: -.04em; line-height: 1; }
-    .aeo-addon-price span { font-size: 16px; font-weight: 500; color: var(--mid); }
-    .aeo-addon-gst { font-size: 12px; color: var(--mid); margin: 4px 0 16px; }
-    .aeo-addon-btn { width: 100%; text-align: center; border-radius: 100px; font-weight: 700; }
-    .aeo-addon-cancel { font-size: 12px; color: var(--mid); margin-top: 8px; }
-    .aeo-divider { border: none; border-top: 1px solid rgba(255,255,255,.06); margin: 16px 0; }
-    .aeo-stat { text-align: center; margin-bottom: 8px; }
-    .aeo-stat-num { display: block; font-size: 24px; font-weight: 900; color: var(--pure); letter-spacing: -.03em; }
-    .aeo-stat-label { font-size: 11px; color: var(--mid); }
 
-    /* Bottom CTA section */
-    .pricing-bottom-cta {
-      text-align: center;
-      padding: 80px 24px;
+    @media (max-width: 768px) {
+      .p-hero { padding: 64px 0 48px; }
+      .p-features-grid { grid-template-columns: 1fr 1fr; }
+      .p-aeo-layout { grid-template-columns: 1fr; }
+      .p-aeo-card { position: static; }
+      .p-price-toggle-row { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .p-aeo-stats { flex-direction: column; gap: 8px; }
     }
-    .pricing-bottom-cta h2 {
-      font-size: clamp(24px,4vw,38px);
-      font-weight: 900;
-      color: var(--pure);
-      letter-spacing: -.04em;
-      margin-bottom: 12px;
-    }
-    .pricing-bottom-cta p {
-      color: var(--light);
-      font-size: 16px;
-      max-width: 480px;
-      margin: 0 auto 32px;
-    }
-
-    @media (max-width: 700px) {
-      .free-site-card { flex-direction: column; text-align: center; }
-      .np-features { grid-template-columns: 1fr; }
-      .np-feature:nth-last-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.04); }
-      .np-feature:last-child { border-bottom: none; }
-      .np-card-top, .np-price-row, .np-cta-area, .aeo-addon-box { padding-left: 20px; padding-right: 20px; }
-      .aeo-addon-box { margin: 0 20px 28px; }
-      .aeo-addon-inner { flex-direction: column; }
-      .aeo-addon-right { width: 100%; }
-      .aeo-price-card { min-width: unset; }
-      .np-price-row { justify-content: center; }
+    @media (max-width: 480px) {
+      .p-features-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -379,212 +565,184 @@
   </div>
 </nav>
 
-<!-- PAGE HERO -->
-<div class="pricing-hero-wrap">
-  <section class="page-hero">
-    <div class="container-sm">
-      <span class="eyebrow reveal reveal-up">Pricing · simple, fixed, no surprises</span>
-      <h1 class="reveal reveal-up">One website. One simple price.</h1>
-      <p class="reveal reveal-up">No tiers. No haggling. No "request a quote." A custom-built professional website — at a price you can sign off on in your lunch break.</p>
-    </div>
-  </section>
-</div>
-
-<section class="section">
-  <div class="container-sm">
-
-    <!-- FREE WEBSITE CARD -->
-    <div class="free-site-card reveal reveal-up">
-      <div class="free-site-left">
-        <p class="free-site-label">The whole website</p>
-        <h2 class="free-site-h">A modern, professional website. Built to win more customers.</h2>
-        <p class="free-site-sub">Custom-designed, mobile-first site that will actually win work — completely free of charge. Just pay hosting and support.</p>
-      </div>
-      <div class="free-site-price">
-        <div class="free-site-was">
-          <span class="free-site-was-num">$3,300</span>
-          <span class="free-site-was-label">value</span>
-        </div>
-        <div class="free-site-free">FREE</div>
-        <p class="free-site-note">One-off setup · inc. GST</p>
-      </div>
-    </div>
-
-    <!-- Trust strip -->
-    <div class="pricing-trust-strip reveal reveal-up">
-      <div class="pts-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        No card required
-      </div>
-      <div class="pts-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        Free demo first
-      </div>
-      <div class="pts-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
-        No lock-in contract
-      </div>
-      <div class="pts-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        Live in 48 hours
-      </div>
-      <div class="pts-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        Real Australian support
-      </div>
-    </div>
-
-    <!-- BILLING TOGGLE -->
-    <div class="pricing-toggle-wrap reveal reveal-up">
-      <div class="pricing-toggle" id="billing-toggle">
-        <button onclick="showMonthly()" id="btn-monthly" class="ptoggle-btn ptoggle-active">Monthly</button>
-        <button onclick="showAnnual()" id="btn-annual" class="ptoggle-btn">Annual <span class="ptoggle-save">save 30%</span></button>
-      </div>
-    </div>
-
-    <!-- MAIN PRICING CARD -->
-    <div class="new-pricing-wrap reveal reveal-up">
-      <div class="np-card">
-
-        <div class="np-card-top">
-          <div class="np-card-topline">
-            <div>
-              <p class="np-label">Support plan</p>
-              <h3 class="np-title">Hosting, backups, uptime, and the important stuff. <span style="color:var(--light);font-weight:400">Sorted.</span></h3>
-            </div>
-            <div class="np-badge" id="hosting-badge">Monthly · cancel anytime</div>
-          </div>
-          <p class="np-sub">Everything your site needs to stay fast, safe and up — plus a real person on support.</p>
-        </div>
-
-        <div class="np-price-row">
-          <div class="np-price" id="hosting-price">$220<span>/mo inc. GST</span></div>
-        </div>
-
-        <div class="np-features">
-          <div class="np-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            <div><strong>Premium high-speed hosting</strong><p>Industrial-grade servers. Sub-second loads, Google-grade fast.</p></div>
-          </div>
-          <div class="np-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            <div><strong>Global CDN</strong><p>Served from the data centre nearest each visitor. Fast everywhere, every time.</p></div>
-          </div>
-          <div class="np-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            <div><strong>SSL &amp; active security</strong><p>Auto-renewing SSL, bot monitoring, active threat detection.</p></div>
-          </div>
-          <div class="np-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-            <div><strong>Daily automatic backups</strong><p>30 days history, instant rollback if anything breaks.</p></div>
-          </div>
-          <div class="np-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            <div><strong>99.9% uptime monitoring</strong><p>Checked every minute. We know before you do.</p></div>
-          </div>
-          <div class="np-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-            <div><strong>One website change per month</strong><p>New photo, updated price, fresh suburb. Live same week.</p></div>
-          </div>
-          <div class="np-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            <div><strong>Real Australian support</strong><p>A real person, your timezone. No ticket systems for small jobs.</p></div>
-          </div>
-          <div class="np-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-            <div><strong>Plain-English monthly reporting</strong><p>Visitors, calls, enquiries. No 50-page dump nobody reads.</p></div>
-          </div>
-          <div class="np-feature">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
-            <div><strong>No lock-in contract</strong><p>Cancel anytime with 30 days notice. Your domain stays yours.</p></div>
-          </div>
-        </div>
-
-        <div class="np-cta-area">
-          <a href="https://buy.stripe.com/00w6oGgJt2Xac6ubfZ1wY01" id="hosting-btn" class="btn np-cta" target="_blank">Get started — $220/month →</a>
-          <p class="pricing-note">Or <a href="index.html#contact">get a free demo first</a> — no commitment required.</p>
-          <div class="np-trust-row">
-            <div class="np-trust-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              No card to start
-            </div>
-            <div class="np-trust-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
-              Cancel anytime
-            </div>
-            <div class="np-trust-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              Australian support
-            </div>
-            <div class="np-trust-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Domain stays yours
-            </div>
-          </div>
-        </div>
-
-        <!-- AEO ADDON -->
-        <div class="aeo-addon-box">
-          <div class="aeo-addon-eyebrow">
-            <span class="aeo-pulse"></span>
-            Optional add-on
-          </div>
-          <div class="aeo-addon-inner">
-            <div class="aeo-addon-left">
-              <h4 class="aeo-addon-h">Your customers stopped Googling.<br>Is your business showing up <em>where they actually search?</em></h4>
-              <p class="aeo-addon-sub">When someone asks ChatGPT "best concreter in Pakenham" or "who's a good plumber near me" — your business either comes up or it doesn't. Most don't. AEO fixes that.</p>
-              <div class="aeo-ai-logos">
-                <span class="aeo-ai-chip">ChatGPT</span>
-                <span class="aeo-ai-chip">Gemini</span>
-                <span class="aeo-ai-chip">Claude</span>
-                <span class="aeo-ai-chip">Perplexity</span>
-                <span class="aeo-ai-chip">Copilot</span>
-              </div>
-              <ul class="aeo-addon-list">
-                <li><span>✓</span> Structured content the LLMs actually read and cite</li>
-                <li><span>✓</span> Monthly visibility checks across all major AI search engines</li>
-                <li><span>✓</span> Plain-English report showing exactly where you appear</li>
-                <li><span>✓</span> Continuous tuning as AI search evolves — it moves fast</li>
-              </ul>
-              <p class="aeo-addon-honest">// Most businesses haven't heard of this yet. The early movers own their category in places like ChatGPT for years.</p>
-            </div>
-            <div class="aeo-addon-right">
-              <div class="aeo-price-card">
-                <p class="aeo-addon-price-label">Add-on · no setup fee</p>
-                <p class="aeo-addon-price" id="aeo-price">$165<span>/mo</span></p>
-                <p class="aeo-addon-gst">inc. GST</p>
-                <a href="https://buy.stripe.com/3cIcN478TgO03zY3Nx1wY00" id="aeo-btn" class="btn aeo-addon-btn" target="_blank">Add AEO →</a>
-                <p class="aeo-addon-cancel">Add-on or remove anytime</p>
-                <div class="aeo-divider"></div>
-                <div class="aeo-stat">
-                  <span class="aeo-stat-num">4+</span>
-                  <span class="aeo-stat-label">AI engines monitored monthly</span>
-                </div>
-                <div class="aeo-stat">
-                  <span class="aeo-stat-num">1</span>
-                  <span class="aeo-stat-label">Plain-English report per month</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /np-card -->
-    </div><!-- /new-pricing-wrap -->
-
+<!-- HERO -->
+<section class="p-hero reveal reveal-up">
+  <div class="container">
+    <div class="p-hero-eyebrow">Pricing · simple, fixed, no surprises</div>
+    <h1>One website.<br><em>One simple price.</em></h1>
+    <p class="p-hero-sub">No tiers. No haggling. No "request a quote." A custom-built professional website at a price you can sign off on in your lunch break.</p>
   </div>
 </section>
 
-<hr class="divider">
+<!-- FREE BLOCK -->
+<div class="p-free-block">
+  <div class="p-free-inner">
+    <p class="p-free-label reveal reveal-up">The whole website</p>
+    <h2 class="p-free-headline reveal reveal-up">A modern, professional website.<br><em>Built to win more customers.</em></h2>
+    <p class="p-free-desc reveal reveal-up">Custom-designed, mobile-first site that will actually win work — completely free of charge. Just pay hosting and support.</p>
+    <div class="p-free-price-row reveal reveal-up">
+      <div class="p-free-price">FREE</div>
+      <div class="p-free-price-meta">
+        <div class="p-free-was">$3,300 value</div>
+        <div class="p-free-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Live in 48 hours
+        </div>
+      </div>
+    </div>
+    <p class="p-free-note reveal reveal-up">// No card. No commitment. <a href="index.html#contact">Get my free demo →</a></p>
+  </div>
+</div>
 
-<section class="section-sm">
-  <div class="container-sm pricing-bottom-cta reveal reveal-up">
+<!-- SUPPORT PLAN -->
+<div class="p-support-block">
+  <div class="p-support-inner">
+    <div class="p-support-header">
+      <p class="p-support-label reveal reveal-up">What's it running</p>
+      <h2 class="p-support-title reveal reveal-up">Support Plan: Hosting, backups,<br>uptime, and the <s>boring</s> important<br>stuff. Sorted.</h2>
+      <p class="p-support-sub reveal reveal-up">Your site needs more than a server. It needs to be fast, safe, backed up, monitored, and quick to update when something changes. That's the monthly. Nothing optional, nothing surprise-priced.</p>
+    </div>
+
+    <!-- Price + toggle -->
+    <div class="p-price-toggle-row reveal reveal-up">
+      <div>
+        <div class="p-price-big" id="p-hosting-price">$220<span>/month inc. GST</span></div>
+      </div>
+      <div class="p-billing-toggle">
+        <button onclick="showMonthly()" id="btn-monthly" class="p-toggle-btn active">Monthly</button>
+        <button onclick="showAnnual()" id="btn-annual" class="p-toggle-btn">Annual <span class="p-save-badge">SAVE 30%</span></button>
+      </div>
+    </div>
+
+    <!-- Features grid -->
+    <div class="p-features-grid reveal reveal-up">
+      <div class="p-feat">
+        <div class="p-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <strong>Premium high-speed hosting</strong>
+        <p>Industrial-grade servers built for speed. Sub-second loads. The kind of fast that Google notices and rewards.</p>
+      </div>
+      <div class="p-feat">
+        <div class="p-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <strong>Global CDN</strong>
+        <p>A worldwide delivery network. Served from the data centre nearest each visitor — fast everywhere.</p>
+      </div>
+      <div class="p-feat">
+        <div class="p-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <strong>SSL &amp; active security</strong>
+        <p>The padlock in the address bar. Auto-renewing SSL, plus active monitoring against bots and bad actors.</p>
+      </div>
+      <div class="p-feat">
+        <div class="p-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+        <strong>Daily automatic backups</strong>
+        <p>Saved every day, kept for 30 days. If anything breaks, we roll it back in minutes.</p>
+      </div>
+      <div class="p-feat">
+        <div class="p-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <strong>99.9% uptime monitoring</strong>
+        <p>Checked every minute, day and night. If something goes wrong we know before you do — usually before your customers do too.</p>
+      </div>
+      <div class="p-feat">
+        <div class="p-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+        <strong>One website change per month</strong>
+        <p>New photo, updated price, fresh suburb. Send it through, we'll have it live the same week.</p>
+      </div>
+      <div class="p-feat">
+        <div class="p-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <strong>Real Australian support</strong>
+        <p>A monthly snapshot — visitors, calls, enquiries. Email or text us — we don't ticket-gate small jobs.</p>
+      </div>
+      <div class="p-feat">
+        <div class="p-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <strong>Plain-English reporting</strong>
+        <p>Month-to-month snapshot of visitors, calls and enquiries. No 50-page Analytics dump nobody reads.</p>
+      </div>
+      <div class="p-feat">
+        <div class="p-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div>
+        <strong>No lock-in contract</strong>
+        <p>Month-to-month. Cancel any time with 30 days' notice. The domain stays in your name. The code is yours.</p>
+      </div>
+    </div>
+
+    <!-- CTA row -->
+    <div class="p-cta-row reveal reveal-up">
+      <a href="https://buy.stripe.com/00w6oGgJt2Xac6ubfZ1wY01" id="hosting-btn" class="btn p-cta-btn" target="_blank">Get started — $220/month →</a>
+      <div class="p-cta-meta">
+        <div class="p-cta-meta-main">Or <a href="index.html#contact">get a free demo first</a> — no commitment required.</div>
+        <div class="p-cta-trust">
+          <span>No card to start</span>
+          <span>Cancel anytime</span>
+          <span>Australian support</span>
+          <span>Domain stays yours</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AEO BLOCK -->
+<div class="p-aeo-block">
+  <div class="p-aeo-inner">
+    <div class="p-aeo-eyebrow reveal reveal-up">
+      <span class="p-aeo-tag">Optional</span>
+      <span class="p-aeo-sub-tag">The smartest add-on you'll buy this year</span>
+    </div>
+    <div class="p-aeo-layout">
+      <div class="reveal reveal-left">
+        <h2 class="p-aeo-title">Get found in <em>ChatGPT,<br>Gemini, Claude</em> &amp;<br>every other AI search.</h2>
+        <p class="p-aeo-desc">Your customers stopped Googling. If your business doesn't show up in ChatGPT, you don't exist — no matter how good your Google ranking is.</p>
+        <div class="p-aeo-ai-chips">
+          <span class="p-aeo-chip">ChatGPT</span>
+          <span class="p-aeo-chip">Gemini</span>
+          <span class="p-aeo-chip">Claude</span>
+          <span class="p-aeo-chip">Perplexity</span>
+          <span class="p-aeo-chip">Copilot</span>
+        </div>
+        <ul class="p-aeo-list">
+          <li>Structured content the LLMs actually read and cite</li>
+          <li>Monthly visibility checks across ChatGPT, Gemini, Perplexity &amp; Claude</li>
+          <li>Plain-English report each month showing where you appear (and where you don't yet)</li>
+          <li>Continuous tuning so you stay visible as AI search evolves</li>
+        </ul>
+        <p class="p-aeo-honest">// Most businesses haven't heard of this yet. The early movers will own their category in places like ChatGPT for years.</p>
+      </div>
+      <div class="reveal reveal-right">
+        <div class="p-aeo-card">
+          <p class="p-aeo-card-label">Optional · Add-on</p>
+          <p class="p-aeo-card-title">AEO — AI search visibility</p>
+          <div class="p-aeo-toggle">
+            <button onclick="aeoMonthly()" id="aeo-btn-m" class="p-aeo-tbtn active">Monthly</button>
+            <button onclick="aeoAnnual()" id="aeo-btn-a" class="p-aeo-tbtn">Annual <span class="p-save-badge" style="background:rgba(0,229,255,.15);color:var(--accent)">30%</span></button>
+          </div>
+          <div class="p-aeo-price" id="aeo-price">$165<span>/mo</span></div>
+          <p class="p-aeo-gst">inc. GST</p>
+          <a href="https://buy.stripe.com/3cIcN478TgO03zY3Nx1wY00" id="aeo-link" class="btn p-aeo-card-btn" target="_blank">Add AEO →</a>
+          <p class="p-aeo-cancel">Add-on or remove anytime</p>
+          <div class="p-aeo-divider"></div>
+          <div class="p-aeo-stats">
+            <div class="p-aeo-stat">
+              <span class="p-aeo-stat-num">4+</span>
+              <span class="p-aeo-stat-label">AI engines monitored monthly</span>
+            </div>
+            <div class="p-aeo-stat">
+              <span class="p-aeo-stat-num">1</span>
+              <span class="p-aeo-stat-label">Plain-English report per month</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM CTA -->
+<div class="p-bottom-cta reveal reveal-up">
+  <div class="container">
     <h2>See your business as a real website. Free.</h2>
     <p>Tell us your trade and your suburb. We'll send back a working demo, free, no commitment.</p>
     <a href="index.html#contact" class="btn">Get my free demo →</a>
     <p style="font-size:13px;color:var(--mid);margin-top:16px">// No card. No commitment. Free demo first.</p>
   </div>
-</section>
+</div>
 
 <footer>
   <div class="container">
@@ -627,52 +785,52 @@
     document.getElementById('nav-links').classList.toggle('open');
   });
 
-  const links = {
+  const data = {
     hosting: {
-      monthly: { price: '$220<span>/mo inc. GST</span>', badge: 'Monthly · cancel anytime', url: 'https://buy.stripe.com/00w6oGgJt2Xac6ubfZ1wY01', label: 'Get started — $220/month →' },
-      annual:  { price: '$154<span>/mo inc. GST</span>', badge: 'Annual — save 30%',        url: 'https://buy.stripe.com/00w14meBl55i3zYdo71wY04', label: 'Get started — $154/month →' }
+      monthly: { price: '$220<span>/month inc. GST</span>', badge: 'Monthly · cancel anytime', url: 'https://buy.stripe.com/00w6oGgJt2Xac6ubfZ1wY01', label: 'Get started — $220/month →' },
+      annual:  { price: '$154<span>/month inc. GST</span>', badge: 'Annual — save 30%', url: 'https://buy.stripe.com/00w14meBl55i3zYdo71wY04', label: 'Get started — $154/month →' }
     },
     aeo: {
-      monthly: { price: '$165<span>/mo</span>', url: 'https://buy.stripe.com/3cIcN478TgO03zY3Nx1wY00', label: 'Add AEO →' },
-      annual:  { price: '$116<span>/mo</span>', url: 'https://buy.stripe.com/14A9AS0KveFS1rQ3Nx1wY05', label: 'Add AEO →' }
+      monthly: { price: '$165<span>/mo</span>', url: 'https://buy.stripe.com/3cIcN478TgO03zY3Nx1wY00' },
+      annual:  { price: '$116<span>/mo</span>', url: 'https://buy.stripe.com/14A9AS0KveFS1rQ3Nx1wY05' }
     }
   };
 
   function showMonthly() {
-    document.getElementById('btn-monthly').classList.add('ptoggle-active');
-    document.getElementById('btn-annual').classList.remove('ptoggle-active');
-    document.getElementById('hosting-price').innerHTML = links.hosting.monthly.price;
-    document.getElementById('hosting-badge').textContent = links.hosting.monthly.badge;
-    document.getElementById('hosting-btn').href = links.hosting.monthly.url;
-    document.getElementById('hosting-btn').textContent = links.hosting.monthly.label;
-    document.getElementById('aeo-price').innerHTML = links.aeo.monthly.price;
-    document.getElementById('aeo-btn').href = links.aeo.monthly.url;
-    document.getElementById('aeo-btn').textContent = links.aeo.monthly.label;
+    document.getElementById('btn-monthly').classList.add('active');
+    document.getElementById('btn-annual').classList.remove('active');
+    document.getElementById('p-hosting-price').innerHTML = data.hosting.monthly.price;
+    document.getElementById('hosting-btn').href = data.hosting.monthly.url;
+    document.getElementById('hosting-btn').textContent = data.hosting.monthly.label;
   }
-
   function showAnnual() {
-    document.getElementById('btn-annual').classList.add('ptoggle-active');
-    document.getElementById('btn-monthly').classList.remove('ptoggle-active');
-    document.getElementById('hosting-price').innerHTML = links.hosting.annual.price;
-    document.getElementById('hosting-badge').textContent = links.hosting.annual.badge;
-    document.getElementById('hosting-btn').href = links.hosting.annual.url;
-    document.getElementById('hosting-btn').textContent = links.hosting.annual.label;
-    document.getElementById('aeo-price').innerHTML = links.aeo.annual.price;
-    document.getElementById('aeo-btn').href = links.aeo.annual.url;
-    document.getElementById('aeo-btn').textContent = links.aeo.annual.label;
+    document.getElementById('btn-annual').classList.add('active');
+    document.getElementById('btn-monthly').classList.remove('active');
+    document.getElementById('p-hosting-price').innerHTML = data.hosting.annual.price;
+    document.getElementById('hosting-btn').href = data.hosting.annual.url;
+    document.getElementById('hosting-btn').textContent = data.hosting.annual.label;
+  }
+  function aeoMonthly() {
+    document.getElementById('aeo-btn-m').classList.add('active');
+    document.getElementById('aeo-btn-a').classList.remove('active');
+    document.getElementById('aeo-price').innerHTML = data.aeo.monthly.price;
+    document.getElementById('aeo-link').href = data.aeo.monthly.url;
+  }
+  function aeoAnnual() {
+    document.getElementById('aeo-btn-a').classList.add('active');
+    document.getElementById('aeo-btn-m').classList.remove('active');
+    document.getElementById('aeo-price').innerHTML = data.aeo.annual.price;
+    document.getElementById('aeo-link').href = data.aeo.annual.url;
   }
 
   // Scroll reveals
-  const revealEls = document.querySelectorAll('.reveal');
-  const revealObs = new IntersectionObserver((entries) => {
+  const els = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('revealed');
-        revealObs.unobserve(e.target);
-      }
+      if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  revealEls.forEach(el => revealObs.observe(el));
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  els.forEach(el => obs.observe(el));
 </script>
 </body>
 </html>
