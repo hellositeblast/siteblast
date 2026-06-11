@@ -885,8 +885,15 @@ footer ul a:hover { color: var(--white); }
   box-shadow: 0 0 32px rgba(0,229,255,.1);
 }
 .ba-mobile-wrap {
-  max-width: 280px;
+  max-width: 320px;
   margin: 0 auto;
+  aspect-ratio: unset;
+}
+.ba-mobile-wrap img {
+  object-fit: contain;
+  object-position: top center;
+  height: auto;
+  max-height: 560px;
 }
 .ba-caption {
   font-size: 13px;
