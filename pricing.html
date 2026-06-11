@@ -528,6 +528,39 @@
     }
 
     /* Anim pulse */
+    .p-aeo-price-wrap {
+      position: relative;
+      margin-bottom: 4px;
+    }
+    .p-aeo-price-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -10px -20px;
+      background: radial-gradient(ellipse at center, rgba(0,229,255,.18) 0%, transparent 70%);
+      pointer-events: none;
+      border-radius: 50%;
+    }
+    .p-aeo-ticks {
+      list-style: none;
+      padding: 0; margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .p-aeo-ticks li {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 13px;
+      color: var(--light);
+    }
+    .p-aeo-ticks li::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
     @keyframes pulse-ring {
       0% { box-shadow: 0 0 0 0 rgba(0,229,255,.4); }
       70% { box-shadow: 0 0 0 8px rgba(0,229,255,0); }
@@ -713,21 +746,19 @@
             <button onclick="aeoMonthly()" id="aeo-btn-m" class="p-aeo-tbtn active">Monthly</button>
             <button onclick="aeoAnnual()" id="aeo-btn-a" class="p-aeo-tbtn">Annual <span class="p-save-badge" style="background:rgba(0,229,255,.15);color:var(--accent)">30%</span></button>
           </div>
-          <div class="p-aeo-price" id="aeo-price">$165<span>/mo</span></div>
+          <div class="p-aeo-price-wrap">
+            <div class="p-aeo-price" id="aeo-price">$165<span>/mo</span></div>
+          </div>
           <p class="p-aeo-gst">inc. GST</p>
           <a href="https://buy.stripe.com/3cIcN478TgO03zY3Nx1wY00" id="aeo-link" class="btn p-aeo-card-btn" target="_blank">Add AEO →</a>
           <p class="p-aeo-cancel">Add-on or remove anytime</p>
           <div class="p-aeo-divider"></div>
-          <div class="p-aeo-stats">
-            <div class="p-aeo-stat">
-              <span class="p-aeo-stat-num">4+</span>
-              <span class="p-aeo-stat-label">AI engines monitored monthly</span>
-            </div>
-            <div class="p-aeo-stat">
-              <span class="p-aeo-stat-num">1</span>
-              <span class="p-aeo-stat-label">Plain-English report per month</span>
-            </div>
-          </div>
+          <ul class="p-aeo-ticks">
+            <li>Track visibility across 4+ AI engines</li>
+            <li>Monthly report, in plain English</li>
+            <li>Add-on or remove anytime</li>
+            <li>No setup fee</li>
+          </ul>
         </div>
       </div>
     </div>
