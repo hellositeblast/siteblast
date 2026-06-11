@@ -1077,5 +1077,65 @@
   els.forEach(el => observer.observe(el));
 })();
 </script>
+<!-- Floating mobile CTA -->
+<a href="#contact" class="fab-cta" id="fab-cta">
+  <span class="fab-icon">⚡</span>
+  <span class="fab-label">Get my free demo</span>
+</a>
+
+<style>
+.fab-cta {
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent, #00E5FF);
+  color: #000;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: -.01em;
+  padding: 14px 28px;
+  border-radius: 100px;
+  text-decoration: none;
+  box-shadow: 0 4px 24px rgba(0,229,255,.35), 0 2px 8px rgba(0,0,0,.4);
+  z-index: 999;
+  white-space: nowrap;
+  align-items: center;
+  gap: 8px;
+  transition: transform .15s ease, box-shadow .15s ease, opacity .3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+.fab-cta.fab-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.fab-cta:active {
+  transform: translateX(-50%) scale(.96);
+}
+.fab-icon { font-size: 16px; line-height: 1; }
+@media (max-width: 768px) {
+  .fab-cta { display: flex; }
+}
+</style>
+
+<script>
+(function() {
+  var fab = document.getElementById('fab-cta');
+  var hero = document.querySelector('.hero');
+  var contact = document.getElementById('contact');
+  function onScroll() {
+    if (!hero || !contact) return;
+    var heroBottom = hero.getBoundingClientRect().bottom;
+    var contactTop = contact.getBoundingClientRect().top;
+    var show = heroBottom < 0 && contactTop > window.innerHeight;
+    fab.classList.toggle('fab-visible', show);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+
 </body>
 </html>
