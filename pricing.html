@@ -673,6 +673,298 @@
     @media (max-width: 700px) {
       .p-reviews-grid { grid-template-columns: 1fr; }
     }
+
+    /* ── TRUST BAR ── */
+    .p-trust-bar {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 40px 0;
+    }
+    .p-trust-bar-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+    .p-trust-stat { text-align: center; }
+    .p-trust-num {
+      display: block;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 900;
+      letter-spacing: -.04em;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .p-trust-label {
+      font-size: 12px;
+      color: var(--mid);
+      line-height: 1.4;
+    }
+    .p-trust-divider {
+      width: 1px;
+      height: 40px;
+      background: var(--border);
+      flex-shrink: 0;
+    }
+
+    /* ── COMPARISON TABLE ── */
+    .p-compare-block {
+      border-top: 1px solid var(--border);
+      padding: 100px 0;
+    }
+    .p-compare-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .p-compare-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .p-compare-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .p-compare-title {
+      font-size: clamp(26px, 4vw, 44px);
+      font-weight: 900;
+      letter-spacing: -.04em;
+      color: var(--pure);
+      line-height: 1.05;
+      margin-bottom: 48px;
+    }
+    .p-compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.15fr;
+      gap: 16px;
+      align-items: start;
+    }
+    .p-compare-col {
+      background: rgba(255,255,255,.02);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .p-compare-col-header {
+      padding: 20px 20px 0;
+    }
+    .p-compare-type {
+      display: block;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--pure);
+      letter-spacing: -.02em;
+      margin-bottom: 2px;
+    }
+    .p-compare-type-sub {
+      font-size: 12px;
+      color: var(--mid);
+    }
+    .p-compare-price-area {
+      padding: 16px 20px 20px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .p-compare-price {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -.03em;
+      color: var(--pure);
+    }
+    .p-compare-per {
+      font-size: 13px;
+      color: var(--mid);
+      margin-left: 4px;
+    }
+    .p-compare-list {
+      list-style: none;
+      padding: 16px 20px 20px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .p-compare-list li {
+      font-size: 13px;
+      line-height: 1.5;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .p-compare-con { color: var(--mid); }
+    .p-compare-con::before { content: '✕'; color: #ef4444; font-weight: 700; flex-shrink: 0; font-size: 11px; margin-top: 2px; }
+    .p-compare-neutral { color: var(--light); }
+    .p-compare-neutral::before { content: '~'; color: #f59e0b; font-weight: 700; flex-shrink: 0; font-size: 14px; margin-top: 0; }
+    .p-compare-pro { color: var(--light); }
+    .p-compare-pro::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; font-size: 12px; margin-top: 1px; }
+
+    /* Siteblast column highlight */
+    .p-compare-sb {
+      border-color: rgba(0,229,255,.25);
+      background: linear-gradient(180deg, rgba(0,229,255,.06) 0%, rgba(0,229,255,.01) 100%);
+      box-shadow: 0 0 40px rgba(0,229,255,.08);
+      position: relative;
+    }
+    .p-compare-sb-header {
+      position: relative;
+    }
+    .p-compare-rec {
+      display: inline-block;
+      background: var(--accent);
+      color: #000;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-bottom: 8px;
+    }
+    .p-compare-sb-price .p-compare-price {
+      color: var(--accent);
+    }
+    .p-compare-cta {
+      display: block;
+      text-align: center;
+      margin: 0 20px 20px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 12px;
+    }
+
+    /* ── ROI BLOCK ── */
+    .p-roi-block {
+      border-top: 1px solid var(--border);
+      padding: 48px 0;
+      margin-top: 0;
+    }
+    .p-roi-inner {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+    .p-roi-left { flex: 1; }
+    .p-roi-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 12px;
+    }
+    .p-roi-title {
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 900;
+      letter-spacing: -.03em;
+      color: var(--pure);
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    .p-roi-title em { font-style: normal; color: var(--accent); }
+    .p-roi-desc {
+      font-size: 14px;
+      color: var(--light);
+      line-height: 1.6;
+      max-width: 360px;
+    }
+    .p-roi-visual {
+      display: flex;
+      align-items: flex-end;
+      gap: 24px;
+    }
+    .p-roi-bar-group {
+      display: flex;
+      align-items: flex-end;
+      gap: 12px;
+    }
+    .p-roi-bar-item { text-align: center; }
+    .p-roi-bar {
+      width: 72px;
+      border-radius: 8px 8px 0 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 8px;
+      transition: height .6s cubic-bezier(.22,1,.36,1);
+    }
+    .p-roi-bar span {
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .p-roi-bar-cost {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .p-roi-bar-cost span { color: var(--mid); }
+    .p-roi-bar-return {
+      background: linear-gradient(180deg, rgba(0,229,255,.25) 0%, rgba(0,229,255,.08) 100%);
+      border: 1px solid rgba(0,229,255,.3);
+    }
+    .p-roi-bar-return span { color: var(--accent); }
+    .p-roi-bar-label {
+      font-size: 11px;
+      color: var(--mid);
+      margin-top: 8px;
+    }
+    .p-roi-multiplier {
+      text-align: center;
+      padding-bottom: 20px;
+    }
+    .p-roi-mult-num {
+      display: block;
+      font-size: 36px;
+      font-weight: 900;
+      letter-spacing: -.04em;
+      color: var(--accent);
+      line-height: 1;
+      text-shadow: 0 0 30px rgba(0,229,255,.3);
+    }
+    .p-roi-mult-label {
+      font-size: 11px;
+      color: var(--mid);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .p-roi-context {
+      display: flex;
+      gap: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      margin-top: 24px;
+    }
+    .p-roi-context-item {
+      font-size: 13px;
+      color: var(--mid);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .p-roi-context-item span { font-size: 16px; }
+
+    @media (max-width: 768px) {
+      .p-trust-bar-inner { flex-wrap: wrap; justify-content: center; gap: 16px; }
+      .p-trust-divider { display: none; }
+      .p-trust-stat { min-width: 100px; }
+      .p-compare-grid { grid-template-columns: 1fr; }
+      .p-compare-sb { order: -1; }
+      .p-roi-inner { flex-direction: column; gap: 32px; }
+      .p-roi-context { flex-direction: column; gap: 12px; }
+    }
+
   </style>
 </head>
 <body>
@@ -702,6 +994,32 @@
   </div>
 </section>
 
+
+<!-- TRUST STRIP -->
+<div class="p-trust-bar reveal reveal-up">
+  <div class="p-trust-bar-inner">
+    <div class="p-trust-stat">
+      <span class="p-trust-num">50+</span>
+      <span class="p-trust-label">Sites built for<br>Aussie businesses</span>
+    </div>
+    <div class="p-trust-divider"></div>
+    <div class="p-trust-stat">
+      <span class="p-trust-num">48hr</span>
+      <span class="p-trust-label">Average build<br>to live time</span>
+    </div>
+    <div class="p-trust-divider"></div>
+    <div class="p-trust-stat">
+      <span class="p-trust-num">5.0</span>
+      <span class="p-trust-label">Google rating<br>across all clients</span>
+    </div>
+    <div class="p-trust-divider"></div>
+    <div class="p-trust-stat">
+      <span class="p-trust-num">$0</span>
+      <span class="p-trust-label">Upfront cost<br>to get started</span>
+    </div>
+  </div>
+</div>
+
 <!-- FREE BLOCK -->
 <div class="p-free-block">
   <div class="p-free-inner">
@@ -719,6 +1037,72 @@
       </div>
     </div>
     <p class="p-free-note reveal reveal-up">// No card. No commitment. <a href="index.html#contact">Get my free demo →</a></p>
+  </div>
+</div>
+
+
+<!-- COMPARISON TABLE -->
+<div class="p-compare-block">
+  <div class="p-compare-inner">
+    <p class="p-compare-label reveal reveal-up">How it stacks up</p>
+    <h2 class="p-compare-title reveal reveal-up">Three ways to get a website.<br>Only one that makes sense.</h2>
+    <div class="p-compare-grid reveal reveal-up">
+      <div class="p-compare-col p-compare-diy">
+        <div class="p-compare-col-header">
+          <span class="p-compare-type">DIY</span>
+          <span class="p-compare-type-sub">Wix, Squarespace, etc.</span>
+        </div>
+        <div class="p-compare-price-area">
+          <span class="p-compare-price">$30–$60</span>
+          <span class="p-compare-per">/mo + your time</span>
+        </div>
+        <ul class="p-compare-list">
+          <li class="p-compare-con">Weekends lost to drag-and-drop</li>
+          <li class="p-compare-con">Still looks like a template</li>
+          <li class="p-compare-con">No one to call when it breaks</li>
+          <li class="p-compare-con">SEO? You're on your own</li>
+          <li class="p-compare-con">Mobile usually looks awful</li>
+        </ul>
+      </div>
+      <div class="p-compare-col p-compare-agency">
+        <div class="p-compare-col-header">
+          <span class="p-compare-type">Agency</span>
+          <span class="p-compare-type-sub">Traditional web design</span>
+        </div>
+        <div class="p-compare-price-area">
+          <span class="p-compare-price">$5k–$15k</span>
+          <span class="p-compare-per">upfront + hosting</span>
+        </div>
+        <ul class="p-compare-list">
+          <li class="p-compare-neutral">Professional result (usually)</li>
+          <li class="p-compare-con">6–12 week timeline</li>
+          <li class="p-compare-con">Big invoice before you see a thing</li>
+          <li class="p-compare-con">$80–$150/hr for changes</li>
+          <li class="p-compare-con">Locked into their platform</li>
+        </ul>
+      </div>
+      <div class="p-compare-col p-compare-sb">
+        <div class="p-compare-col-header p-compare-sb-header">
+          <span class="p-compare-rec">Recommended</span>
+          <span class="p-compare-type">Siteblast</span>
+          <span class="p-compare-type-sub">Built for trades &amp; small biz</span>
+        </div>
+        <div class="p-compare-price-area p-compare-sb-price">
+          <span class="p-compare-price">$0</span>
+          <span class="p-compare-per">upfront · $220/mo all-in</span>
+        </div>
+        <ul class="p-compare-list">
+          <li class="p-compare-pro">Custom-designed, not a template</li>
+          <li class="p-compare-pro">Live in 48 hours</li>
+          <li class="p-compare-pro">$0 to build — hosting covers everything</li>
+          <li class="p-compare-pro">Monthly changes included</li>
+          <li class="p-compare-pro">Real human support, same timezone</li>
+          <li class="p-compare-pro">No lock-in — cancel anytime</li>
+          <li class="p-compare-pro">Your domain, your code, always</li>
+        </ul>
+        <a href="index.html#contact" class="btn p-compare-cta">Get my free demo →</a>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -788,6 +1172,49 @@
         <div class="p-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div>
         <strong>No lock-in contract</strong>
         <p>Month-to-month. Cancel any time with 30 days' notice. The domain stays in your name. The code is yours.</p>
+      </div>
+    </div>
+
+
+    <!-- ROI BLOCK -->
+    <div class="p-roi-block reveal reveal-up">
+      <div class="p-roi-inner">
+        <div class="p-roi-left">
+          <p class="p-roi-label">The maths</p>
+          <h3 class="p-roi-title">$220/mo in.<br><em>$6,000+/year back.</em></h3>
+          <p class="p-roi-desc">Just one extra customer a week at $250 average job value pays for itself 2× over — every single month. Most owners see more.</p>
+        </div>
+        <div class="p-roi-visual">
+          <div class="p-roi-bar-group">
+            <div class="p-roi-bar-item">
+              <div class="p-roi-bar p-roi-bar-cost" style="height:32px;">
+                <span>$220/mo</span>
+              </div>
+              <p class="p-roi-bar-label">Your cost</p>
+            </div>
+            <div class="p-roi-bar-item">
+              <div class="p-roi-bar p-roi-bar-return" style="height:140px;">
+                <span>$1,000+/mo</span>
+              </div>
+              <p class="p-roi-bar-label">Potential return</p>
+            </div>
+          </div>
+          <div class="p-roi-multiplier">
+            <span class="p-roi-mult-num">4.5×</span>
+            <span class="p-roi-mult-label">average ROI</span>
+          </div>
+        </div>
+      </div>
+      <div class="p-roi-context">
+        <div class="p-roi-context-item">
+          <span>☕</span> Less than a coffee a day
+        </div>
+        <div class="p-roi-context-item">
+          <span>📱</span> Less than your phone bill
+        </div>
+        <div class="p-roi-context-item">
+          <span>🔧</span> Less than one service call
+        </div>
       </div>
     </div>
 
