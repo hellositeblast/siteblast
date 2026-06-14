@@ -11,6 +11,10 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="favicon.png">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -37,7 +41,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: var(--black);
   color: var(--white);
   font-size: 16px;
@@ -175,25 +179,7 @@ nav {
   line-height: 1.6;
 }
 
-/* ── TRUST BAR ── */
-.p-trust {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 44px 0;
-}
-.p-trust-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
-.p-trust-stat { text-align: center; flex: 1; min-width: 110px; }
-.p-trust-num {
-  display: block;
-  font-size: clamp(28px, 4vw, 42px);
-  font-weight: 800;
-  letter-spacing: -.04em;
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 6px;
-}
-.p-trust-label { font-size: 12px; color: var(--mid); line-height: 1.4; }
-.p-trust-div { width: 1px; height: 40px; background: var(--border); flex-shrink: 0; }
+
 
 /* ── FREE BLOCK ── */
 .p-free { padding: 88px 0; border-bottom: 1px solid var(--border); }
@@ -206,7 +192,7 @@ nav {
 }
 .p-free-headline {
   font-size: clamp(28px, 5vw, 50px);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -.04em;
   line-height: 1.02;
   color: var(--pure);
@@ -262,7 +248,7 @@ nav {
 .p-support { padding: 88px 0 0; }
 .p-support-title {
   font-size: clamp(24px, 4.5vw, 46px);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -.04em;
   line-height: 1.05;
   color: var(--pure);
@@ -397,7 +383,7 @@ nav {
 }
 .p-aeo-title {
   font-size: clamp(24px, 4vw, 42px);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -.04em;
   line-height: 1.05;
   color: var(--pure);
@@ -555,7 +541,7 @@ nav {
 }
 .p-bottom-h {
   font-size: clamp(26px, 5vw, 46px);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -.04em;
   color: var(--pure);
   line-height: 1.05;
@@ -660,21 +646,6 @@ footer ul li a:hover { color: var(--white); }
     <div class="p-hero-eyebrow reveal">Pricing · simple, fixed, no surprises</div>
     <h1 class="reveal">One website.<br><em>One simple price.</em></h1>
     <p class="p-hero-sub reveal">No tiers. No haggling. No "request a quote." A custom-built, professional website for your business — at a price you can sign off on in your lunch break.</p>
-  </div>
-</div>
-
-<!-- 2. TRUST BAR -->
-<div class="p-trust">
-  <div class="wrap">
-    <div class="p-trust-inner">
-      <div class="p-trust-stat reveal"><span class="p-trust-num">50+</span><span class="p-trust-label">Sites built for<br>Aussie businesses</span></div>
-      <div class="p-trust-div"></div>
-      <div class="p-trust-stat reveal"><span class="p-trust-num">48hr</span><span class="p-trust-label">Average build<br>to live time</span></div>
-      <div class="p-trust-div"></div>
-      <div class="p-trust-stat reveal"><span class="p-trust-num">5.0</span><span class="p-trust-label">Google rating<br>across all clients</span></div>
-      <div class="p-trust-div"></div>
-      <div class="p-trust-stat reveal"><span class="p-trust-num">$0</span><span class="p-trust-label">Upfront cost<br>to get started</span></div>
-    </div>
   </div>
 </div>
 
