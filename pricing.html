@@ -164,7 +164,7 @@ nav {
   color: var(--pure);
   margin-bottom: 20px;
 }
-.p-hero h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 40px rgba(0,229,255,.35); }
+.p-hero h1 em { font-style: normal; color: var(--accent); }
 .p-hero-sub {
   font-size: 18px;
   color: var(--light);
@@ -189,7 +189,6 @@ nav {
   color: var(--accent);
   line-height: 1;
   margin-bottom: 6px;
-  text-shadow: 0 0 24px rgba(0,229,255,.25);
 }
 .p-trust-label { font-size: 12px; color: var(--mid); line-height: 1.4; }
 .p-trust-div { width: 1px; height: 40px; background: var(--border); flex-shrink: 0; }
@@ -216,14 +215,13 @@ nav {
 .p-free-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
 .p-free-note { font-size: 13px; color: var(--mid); }
 .p-free-price-block { text-align: right; flex-shrink: 0; padding-top: 8px; }
-.p-free-was { font-size: 14px; color: var(--mid); text-decoration: line-through; margin-bottom: 4px; }
+.p-free-was { font-size: 28px; font-weight: 800; color: var(--mid); text-decoration: line-through; margin-bottom: 4px; letter-spacing: -.03em; }
 .p-free-big {
   font-size: clamp(64px, 12vw, 112px);
   font-weight: 900;
   letter-spacing: -.06em;
   line-height: 1;
   color: var(--accent);
-  text-shadow: 0 0 60px rgba(0,229,255,.3);
 }
 .p-free-badge {
   display: inline-flex;
@@ -418,23 +416,45 @@ nav {
 .p-aeo-list li {
   font-size: 15px;
   color: var(--light);
-  padding: 8px 0;
+  padding: 9px 0;
   border-bottom: 1px solid var(--border);
   display: flex;
-  gap: 10px;
+  align-items: flex-start;
+  gap: 12px;
 }
-.p-aeo-list li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+.p-aeo-list li::before {
+  content: '';
+  width: 18px; height: 18px;
+  background: var(--accent-dim);
+  border: 1px solid rgba(0,229,255,.25);
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300E5FF' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+  background-size: 11px;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
 .p-aeo-honest { font-size: 13px; color: var(--mid); font-style: italic; }
 
 /* AEO card */
 .p-aeo-card {
-  background: var(--card);
-  border: 1px solid var(--border-hi);
+  background: linear-gradient(160deg, #1a2a2e 0%, #161616 50%);
+  border: 1px solid rgba(0,229,255,.2);
   border-radius: var(--radius-lg);
   padding: 32px 28px;
   position: sticky;
   top: 80px;
-  box-shadow: 0 0 40px rgba(0,0,0,.4);
+  box-shadow: 0 0 0 1px rgba(0,229,255,.05), inset 0 1px 0 rgba(0,229,255,.12);
+  overflow: hidden;
+}
+.p-aeo-card::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(0,229,255,.12) 0%, transparent 70%);
+  pointer-events: none;
 }
 .p-aeo-card-label { font-size: 11px; color: var(--mid); font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px; }
 .p-aeo-card-title { font-size: 18px; font-weight: 800; color: var(--pure); margin-bottom: 20px; letter-spacing: -.02em; }
@@ -465,7 +485,6 @@ nav {
   color: var(--accent);
   line-height: 1;
   margin-bottom: 4px;
-  text-shadow: 0 0 32px rgba(0,229,255,.2);
 }
 .p-aeo-price span { font-size: 16px; font-weight: 400; color: var(--mid); letter-spacing: 0; }
 .p-aeo-gst { font-size: 12px; color: var(--mid); margin-bottom: 24px; }
@@ -490,7 +509,19 @@ nav {
   padding: 5px 0;
   display: flex; gap: 8px;
 }
-.p-aeo-ticks li::before { content: '✓'; color: var(--accent); flex-shrink: 0; }
+.p-aeo-ticks li::before {
+  content: '';
+  width: 16px; height: 16px;
+  background: rgba(0,229,255,.1);
+  border: 1px solid rgba(0,229,255,.2);
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300E5FF' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+  background-size: 9px;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
 .p-save-badge { background: var(--accent-dim); color: var(--accent); font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 100px; }
 
 /* ── BOTTOM CTA ── */
@@ -529,7 +560,7 @@ nav {
   margin-bottom: 16px;
   position: relative;
 }
-.p-bottom-h em { font-style: normal; color: var(--accent); text-shadow: 0 0 32px rgba(0,229,255,.3); }
+.p-bottom-h em { font-style: normal; color: var(--accent); }
 .p-bottom-sub {
   font-size: 17px;
   color: var(--light);
@@ -667,26 +698,16 @@ footer ul li a:hover { color: var(--white); }
   </div>
 </div>
 
-<!-- 4. PULL QUOTE -->
-<div class="p-pull">
-  <div class="wrap">
-    <div class="p-pull-inner reveal">
-      <div class="p-pull-img"><img src="review-1.png" alt="Chris C."></div>
-      <div>
-        <p class="p-pull-text">"The GoDaddy site wasn't cutting it. Adam built a great professional website that was fast loading and the phones started ringing. <strong>I haven't had a slow month since.</strong>"</p>
-        <p class="p-pull-author">— Chris C. · Cabinetry &amp; Joinery · SA</p>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- 5. SUPPORT PLAN -->
 <div class="p-support">
   <div class="wrap">
     <div class="eyebrow reveal">// What keeps it humming</div>
     <h2 class="p-support-title reveal">Support Plan: Hosting, backups, uptime,<br>and the <s>boring</s> important stuff. Sorted.</h2>
     <p class="p-support-sub reveal">Your site needs more than a server. It needs to be fast, safe, backed up, monitored, and quick to update when something changes. That's the monthly. Nothing optional, nothing surprise-priced.</p>
-    <div class="p-spots reveal"><span class="p-spots-dot"></span> We take on 8 new clients per month to maintain quality</div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;" class="reveal">
+      <div class="p-spots"><span class="p-spots-dot"></span> 8 new clients per month to maintain quality</div>
+      <div class="p-spots"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg> 30-day money-back guarantee</div>
+    </div>
 
     <!-- Price row -->
     <div class="p-price-row reveal">
@@ -809,10 +830,7 @@ footer ul li a:hover { color: var(--white); }
       <h2 class="p-bottom-h">See your business as a real website. <em>Free.</em></h2>
       <p class="p-bottom-sub">Tell us your trade and your suburb. We'll send back a working demo, free, no commitment. If you like it, the 48-hour clock starts.</p>
       <a href="index.html#contact" class="btn" style="font-size:16px; padding:16px 36px;">Get my free demo →</a>
-      <div class="p-bottom-guarantee">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-        30-day money-back guarantee · No card required · Cancel anytime
-      </div>
+      <div class="p-bottom-guarantee">// No card required · Cancel anytime · Australian support</div>
     </div>
   </div>
 </div>
