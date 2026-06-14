@@ -47,12 +47,37 @@ img { max-width: 100%; display: block; }
   font-size: 15px;
   border: none;
   cursor: pointer;
-  transition: opacity .2s, transform .15s, box-shadow .2s;
+  transition: transform .15s, box-shadow .2s, opacity .2s;
   text-decoration: none;
   letter-spacing: -.01em;
-  box-shadow: 0 0 20px rgba(0,229,255,.25);
+  box-shadow: 0 0 20px rgba(0,229,255,.2);
+  position: relative;
+  overflow: hidden;
 }
-.btn:hover { opacity: .9; transform: translateY(-1px); text-decoration: none; box-shadow: 0 0 32px rgba(0,229,255,.45); }
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(255,255,255,.38) 50%,
+    transparent 80%
+  );
+  transform: skewX(-15deg);
+  animation: btn-shimmer 3.2s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes btn-shimmer {
+  0%   { left: -100%; opacity: 0; }
+  10%  { opacity: 1; }
+  40%  { left: 150%; opacity: 1; }
+  41%  { opacity: 0; }
+  100% { left: 150%; opacity: 0; }
+}
+.btn:hover { opacity: .92; transform: translateY(-1px); text-decoration: none; box-shadow: 0 0 32px rgba(0,229,255,.4); color: var(--black); }
 
 .btn-ghost {
   background: transparent;
