@@ -42,7 +42,9 @@ body {
   color: var(--white);
   font-size: 16px;
   line-height: 1.65;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a { color: var(--accent); text-decoration: none; }
@@ -81,7 +83,7 @@ img { max-width: 100%; display: block; }
 /* ── EYEBROW ── */
 .eyebrow {
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--mid);
@@ -158,7 +160,7 @@ nav {
 }
 .p-hero h1 {
   font-size: clamp(38px, 7vw, 72px);
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -.05em;
   line-height: .95;
   color: var(--pure);
@@ -184,7 +186,7 @@ nav {
 .p-trust-num {
   display: block;
   font-size: clamp(28px, 4vw, 42px);
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -.04em;
   color: var(--accent);
   line-height: 1;
@@ -204,7 +206,7 @@ nav {
 }
 .p-free-headline {
   font-size: clamp(28px, 5vw, 50px);
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -.04em;
   line-height: 1.02;
   color: var(--pure);
@@ -218,7 +220,7 @@ nav {
 .p-free-was { font-size: 28px; font-weight: 800; color: var(--mid); text-decoration: line-through; margin-bottom: 4px; letter-spacing: -.03em; }
 .p-free-big {
   font-size: clamp(64px, 12vw, 112px);
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -.06em;
   line-height: 1;
   color: var(--accent);
@@ -260,7 +262,7 @@ nav {
 .p-support { padding: 88px 0 0; }
 .p-support-title {
   font-size: clamp(24px, 4.5vw, 46px);
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -.04em;
   line-height: 1.05;
   color: var(--pure);
@@ -297,7 +299,7 @@ nav {
 }
 .p-price-big {
   font-size: clamp(46px, 8vw, 74px);
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -.05em;
   color: var(--pure);
   line-height: 1;
@@ -326,7 +328,7 @@ nav {
   gap: 7px;
 }
 .p-toggle-btn.active { background: var(--accent); color: var(--black); }
-.p-save { background: rgba(0,0,0,.25); font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 100px; color: var(--black); }
+.p-save { background: #F5C400; color: #000; font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 100px; letter-spacing: .04em; }
 
 /* Features grid */
 .p-features {
@@ -354,7 +356,7 @@ nav {
   box-shadow: 0 0 10px rgba(0,229,255,.08);
 }
 .p-feat-icon svg { width: 16px; height: 16px; stroke: var(--accent); }
-.p-feat strong { display: block; font-size: 14px; font-weight: 700; color: var(--pure); margin-bottom: 5px; }
+.p-feat strong { display: block; font-size: 14px; font-weight: 600; color: var(--pure); margin-bottom: 5px; }
 .p-feat p { font-size: 13px; color: var(--mid); line-height: 1.5; margin: 0; }
 
 /* CTA row after features */
@@ -395,7 +397,7 @@ nav {
 }
 .p-aeo-title {
   font-size: clamp(24px, 4vw, 42px);
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -.04em;
   line-height: 1.05;
   color: var(--pure);
@@ -480,7 +482,7 @@ nav {
 .p-aeo-tbtn.active { background: var(--accent); color: var(--black); }
 .p-aeo-price {
   font-size: 52px;
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -.05em;
   color: var(--accent);
   line-height: 1;
@@ -522,7 +524,7 @@ nav {
   flex-shrink: 0;
   margin-top: 1px;
 }
-.p-save-badge { background: var(--accent-dim); color: var(--accent); font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 100px; }
+.p-save-badge { background: #F5C400; color: #000; font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 100px; letter-spacing: .04em; }
 
 /* ── BOTTOM CTA ── */
 .p-bottom { padding: 88px 0; border-top: 1px solid var(--border); }
@@ -553,7 +555,7 @@ nav {
 }
 .p-bottom-h {
   font-size: clamp(26px, 5vw, 46px);
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -.04em;
   color: var(--pure);
   line-height: 1.05;
