@@ -19,20 +19,20 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --black:       #0A0A0A;
-  --dark:        #111111;
-  --card:        #161616;
+  --black:       #080808;
+  --dark:        #0f0f0f;
+  --card:        #131313;
   --card-hi:     #1a1a1a;
-  --border:      #222222;
+  --border:      #1e1e1e;
   --border-hi:   #2e2e2e;
   --mid:         #666666;
   --light:       #999999;
   --white:       #F5F5F5;
   --pure:        #FFFFFF;
-  --accent:      #00E5FF;
-  --accent-dark: #00B8CC;
-  --accent-dim:  rgba(0,229,255,0.08);
-  --accent-glow: rgba(0,229,255,0.18);
+  --accent:      #B9FF4B;
+  --accent-dark: #94CC2A;
+  --accent-dim:  rgba(185,255,75,0.08);
+  --accent-glow: rgba(185,255,75,0.18);
   --radius:      8px;
   --radius-lg:   14px;
   --max:         900px;
@@ -72,7 +72,7 @@ img { max-width: 100%; display: block; }
   transition: opacity .18s, transform .15s, box-shadow .2s;
   text-decoration: none;
   letter-spacing: -.01em;
-  box-shadow: 0 0 24px rgba(0,229,255,.2);
+  box-shadow: 0 0 24px rgba(185,255,75,.2);
   position: relative;
   overflow: hidden;
 }
@@ -94,7 +94,7 @@ img { max-width: 100%; display: block; }
   41%  { opacity: 0; }
   100% { left: 150%; opacity: 0; }
 }
-.btn:hover { opacity: .88; transform: translateY(-1px); text-decoration: none; box-shadow: 0 0 36px rgba(0,229,255,.38); color: var(--black); }
+.btn:hover { opacity: .88; transform: translateY(-1px); text-decoration: none; box-shadow: 0 0 36px rgba(185,255,75,.38); color: var(--black); }
 
 .btn-ghost {
   background: transparent;
@@ -102,7 +102,7 @@ img { max-width: 100%; display: block; }
   color: var(--white);
   box-shadow: none;
 }
-.btn-ghost:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); box-shadow: 0 0 16px rgba(0,229,255,.1); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); box-shadow: 0 0 16px rgba(185,255,75,.1); }
 
 /* ── EYEBROW ── */
 .eyebrow {
@@ -161,7 +161,7 @@ nav {
   top: -120px; left: 50%;
   transform: translateX(-50%);
   width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(0,229,255,.07) 0%, transparent 68%);
+  background: radial-gradient(circle, rgba(185,255,75,.07) 0%, transparent 68%);
   pointer-events: none;
 }
 .p-hero-eyebrow {
@@ -236,14 +236,14 @@ nav {
   align-items: center;
   gap: 6px;
   background: var(--accent-dim);
-  border: 1px solid rgba(0,229,255,.2);
+  border: 1px solid rgba(185,255,75,.2);
   color: var(--accent);
   font-size: 12px;
   font-weight: 700;
   padding: 5px 12px;
   border-radius: 100px;
   margin-top: 10px;
-  box-shadow: 0 0 12px rgba(0,229,255,.1);
+  box-shadow: 0 0 12px rgba(185,255,75,.1);
 }
 .p-free-badge::before { content: '●'; font-size: 7px; animation: pulse-dot 2s infinite; }
 @keyframes pulse-dot { 0%,100%{opacity:1}50%{opacity:.3} }
@@ -353,13 +353,13 @@ nav {
 .p-feat-icon {
   width: 34px; height: 34px;
   background: var(--accent-dim);
-  border: 1px solid rgba(0,229,255,.15);
+  border: 1px solid rgba(185,255,75,.15);
   border-radius: 9px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 12px;
-  box-shadow: 0 0 10px rgba(0,229,255,.08);
+  box-shadow: 0 0 10px rgba(185,255,75,.08);
 }
 .p-feat-icon svg { width: 16px; height: 16px; stroke: var(--accent); }
 .p-feat strong { display: block; font-size: 14px; font-weight: 600; color: var(--pure); margin-bottom: 5px; }
@@ -434,7 +434,7 @@ nav {
   content: '';
   width: 18px; height: 18px;
   background: var(--accent-dim);
-  border: 1px solid rgba(0,229,255,.25);
+  border: 1px solid rgba(185,255,75,.25);
   border-radius: 50%;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300E5FF' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
   background-size: 11px;
@@ -448,12 +448,12 @@ nav {
 /* AEO card */
 .p-aeo-card {
   background: linear-gradient(160deg, #1a2a2e 0%, #161616 50%);
-  border: 1px solid rgba(0,229,255,.2);
+  border: 1px solid rgba(185,255,75,.2);
   border-radius: var(--radius-lg);
   padding: 32px 28px;
   position: sticky;
   top: 80px;
-  box-shadow: 0 0 0 1px rgba(0,229,255,.05), inset 0 1px 0 rgba(0,229,255,.12);
+  box-shadow: 0 0 0 1px rgba(185,255,75,.05), inset 0 1px 0 rgba(185,255,75,.12);
   overflow: hidden;
 }
 .p-aeo-card::before {
@@ -461,7 +461,7 @@ nav {
   position: absolute;
   top: -60px; right: -60px;
   width: 200px; height: 200px;
-  background: radial-gradient(circle, rgba(0,229,255,.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(185,255,75,.12) 0%, transparent 70%);
   pointer-events: none;
 }
 .p-aeo-card-label { font-size: 11px; color: var(--mid); font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px; }
@@ -506,7 +506,7 @@ nav {
   text-decoration: none;
   transition: opacity .18s, box-shadow .2s;
   margin-bottom: 10px;
-  box-shadow: 0 0 20px rgba(0,229,255,.2);
+  box-shadow: 0 0 20px rgba(185,255,75,.2);
   position: relative;
   overflow: hidden;
 }
@@ -520,7 +520,7 @@ nav {
   animation: btn-shimmer 3.2s ease-in-out infinite;
   pointer-events: none;
 }
-.p-aeo-btn:hover { opacity: .88; box-shadow: 0 0 32px rgba(0,229,255,.35); text-decoration: none; color: var(--black); }
+.p-aeo-btn:hover { opacity: .88; box-shadow: 0 0 32px rgba(185,255,75,.35); text-decoration: none; color: var(--black); }
 .p-aeo-cancel { font-size: 12px; color: var(--mid); text-align: center; margin-bottom: 24px; }
 .p-aeo-divider { border: none; border-top: 1px solid var(--border); margin-bottom: 20px; }
 .p-aeo-ticks { list-style: none; }
@@ -532,8 +532,8 @@ nav {
 .p-aeo-ticks li::before {
   content: '';
   width: 16px; height: 16px;
-  background: rgba(0,229,255,.1);
-  border: 1px solid rgba(0,229,255,.2);
+  background: rgba(185,255,75,.1);
+  border: 1px solid rgba(185,255,75,.2);
   border-radius: 50%;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300E5FF' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
   background-size: 9px;
@@ -568,7 +568,7 @@ nav {
   top: -80px; left: 50%;
   transform: translateX(-50%);
   width: 500px; height: 300px;
-  background: radial-gradient(ellipse, rgba(0,229,255,.06) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(185,255,75,.06) 0%, transparent 70%);
   pointer-events: none;
 }
 .p-bottom-h {
