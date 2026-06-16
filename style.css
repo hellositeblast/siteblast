@@ -2393,7 +2393,7 @@ footer ul a:hover { color: var(--white); }
 }
 .offer-panel-ai:hover { background: #100f14; }
 
-/* FREE badge */
+/* FREE badge — no glow */
 .offer-free-badge {
   display: flex;
   align-items: baseline;
@@ -2405,7 +2405,6 @@ footer ul a:hover { color: var(--white); }
   font-weight: 900;
   letter-spacing: -.05em;
   color: var(--accent);
-  text-shadow: 0 0 28px rgba(185,255,75,.45);
   line-height: 1;
 }
 .offer-free-badge span {
@@ -2415,6 +2414,23 @@ footer ul a:hover { color: var(--white); }
   text-transform: uppercase;
   color: var(--mid);
 }
+
+/* Panel 1 green glow background */
+.offer-panel:not(.offer-panel-aeo):not(.offer-panel-ai) {
+  background: #0b0e0b;
+}
+.offer-panel:not(.offer-panel-aeo):not(.offer-panel-ai)::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  z-index: 1;
+}
+.offer-panel:not(.offer-panel-aeo):not(.offer-panel-ai)::after {
+  background: radial-gradient(ellipse, rgba(185,255,75,.13) 0%, transparent 70%);
+}
+.offer-panel:not(.offer-panel-aeo):not(.offer-panel-ai):hover { background: #0e120e; }
 
 /* Tags */
 .offer-tag {
