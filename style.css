@@ -2414,6 +2414,13 @@ footer ul a:hover { color: var(--white); }
   text-transform: uppercase;
   color: var(--mid);
 }
+.offer-was {
+  color: var(--mid);
+  text-decoration: line-through;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
 
 /* ── OFFER PANELS ── */
 .offer-panels {
@@ -2540,12 +2547,12 @@ footer ul a:hover { color: var(--white); }
 
 /* Title */
 .offer-title {
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 800;
   color: var(--pure);
   letter-spacing: -.04em;
   line-height: 1.1;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
   position: relative;
   z-index: 1;
 }
@@ -2599,9 +2606,9 @@ footer ul a:hover { color: var(--white); }
   gap: 11px;
   font-size: 13px;
   font-weight: 500;
-  color: #b8b8b8;
+  color: #e0e0e0;
   padding: 8px 0;
-  border-bottom: 1px solid rgba(255,255,255,.04);
+  border-bottom: 1px solid rgba(255,255,255,.05);
   line-height: 1.4;
 }
 .offer-list li:last-child { border-bottom: none; }
