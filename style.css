@@ -2426,7 +2426,6 @@ footer ul a:hover { color: var(--white); }
 }
 .offer-panel {
   background: linear-gradient(160deg, #131a13 0%, #0e0e0e 55%);
-  border: none;
   padding: 36px 32px 32px;
   display: flex;
   flex-direction: column;
@@ -2435,16 +2434,27 @@ footer ul a:hover { color: var(--white); }
   transition: background .25s;
   box-shadow: inset 0 1px 0 rgba(185,255,75,.08);
 }
-/* corner radial glow — green */
+/* wide spread glow across top — green */
 .offer-panel::after {
   content: '';
   position: absolute;
-  top: -60px; right: -60px;
-  width: 220px; height: 220px;
-  background: radial-gradient(circle, rgba(185,255,75,.09) 0%, transparent 70%);
+  top: -80px; left: 50%;
+  transform: translateX(-50%);
+  width: 400px; height: 300px;
+  background: radial-gradient(ellipse, rgba(185,255,75,.13) 0%, transparent 65%);
   pointer-events: none;
 }
 .offer-panel:hover { background: linear-gradient(160deg, #161f16 0%, #111111 55%); }
+
+/* Panel 1 top border */
+.offer-panel:not(.offer-panel-aeo):not(.offer-panel-ai)::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  z-index: 1;
+}
 
 /* AEO panel */
 .offer-panel-aeo {
@@ -2460,7 +2470,7 @@ footer ul a:hover { color: var(--white); }
   z-index: 1;
 }
 .offer-panel-aeo::after {
-  background: radial-gradient(circle, rgba(185,255,75,.12) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(185,255,75,.15) 0%, transparent 65%);
 }
 .offer-panel-aeo:hover { background: linear-gradient(160deg, #131f17 0%, #0f110f 55%); }
 
@@ -2478,20 +2488,9 @@ footer ul a:hover { color: var(--white); }
   z-index: 1;
 }
 .offer-panel-ai::after {
-  background: radial-gradient(circle, rgba(167,139,250,.12) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(167,139,250,.15) 0%, transparent 65%);
 }
 .offer-panel-ai:hover { background: linear-gradient(160deg, #171430 0%, #100f14 55%); }
-
-/* Panel 1 green glow background */
-.offer-panel:not(.offer-panel-aeo):not(.offer-panel-ai)::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
-  z-index: 1;
-}
-.offer-panel:not(.offer-panel-aeo):not(.offer-panel-ai):hover { background: linear-gradient(160deg, #161f16 0%, #111111 55%); }
 
 /* Tags */
 .offer-tag {
