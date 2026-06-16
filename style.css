@@ -2549,3 +2549,90 @@ footer ul a:hover { color: var(--white); }
 @media (max-width: 900px) {
   .offer-panels { grid-template-columns: 1fr; }
 }
+
+/* ── URGENCY BAR ── */
+.urgency-bar {
+  background: #0d0d0d;
+  border-bottom: 1px solid #1a1a1a;
+  padding: 9px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.urgency-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .4; }
+}
+.urgency-text {
+  font-size: 12px;
+  color: #666;
+  font-family: monospace;
+}
+.urgency-text strong { color: var(--accent); }
+.urgency-strong {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: monospace;
+}
+.urgency-slots {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+.urgency-slot {
+  width: 9px; height: 9px;
+  border-radius: 2px;
+}
+.urgency-slot-taken {
+  background: var(--accent);
+  opacity: .25;
+}
+.urgency-slot-open {
+  background: var(--accent);
+}
+
+/* ── HERO AUDIENCE TAG ── */
+.hero-audience-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(185,255,75,.07);
+  border: 1px solid rgba(185,255,75,.2);
+  border-radius: 20px;
+  padding: 4px 12px;
+  margin-bottom: 12px;
+}
+
+/* ── HERO PRICE ANCHOR ── */
+.hero-price {
+  font-size: 13px;
+  color: var(--mid);
+  margin-bottom: 24px;
+  letter-spacing: -.01em;
+}
+.hero-price strong { color: var(--accent); font-weight: 700; }
+
+/* ── FORM RISK REVERSAL ── */
+.form-risk-reverse {
+  text-align: center;
+  font-size: 12px;
+  color: var(--mid);
+  font-style: italic;
+  margin-top: 14px;
+  line-height: 1.5;
+}
