@@ -2699,3 +2699,27 @@ footer ul a:hover { color: var(--white); }
   line-height: 1;
   display: block;
 }
+
+/* ── HERO TRUST ROW ── */
+.hero-trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  margin-top: 24px;
+}
+.hero-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--mid);
+  letter-spacing: -.01em;
+}
+.hero-trust-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
